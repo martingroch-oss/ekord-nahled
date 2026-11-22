@@ -553,7 +553,7 @@ section+section{padding-top:clamp(56px,6vw,110px)}
       <button type="button" class="link" id="back" style="background:none;border:0;border-bottom:1px solid var(--sky);cursor:pointer;font:700 15px var(--f)">Zpět</button>
       <button type="button" class="btn" id="next">Pokračovat</button>
     </div>
-    <p class="proto" id="pr" hidden>Tohle je prototyp, poptávka se zatím nikam neodesílá.</p>
+    <p class="proto" id="pr" hidden>Po kliknutí na Odeslat se vám otevře e-mail s vyplněnou poptávkou.</p>
   </form>
 </section>
 
@@ -615,7 +615,7 @@ const sum=()=>{const d=new FormData(f),o={};for(const [a,v] of d){if(v instanceo
   const groups=fs.map(x=>[x.dataset.n,[...new Set([...x.querySelectorAll('[name]')].map(e=>e.name))]]);
   document.getElementById('sum').innerHTML=groups.slice(0,k+1).map(([g,ns])=>'<dt style="grid-column:1/-1;font-weight:700;color:var(--navy);margin-top:10px">'+g+'</dt>'+ns.map(n=>'<dt>'+n+'</dt><dd>'+(o[n]?String(o[n]).replace(/[&<>]/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;'}[c])):'')+'</dd>').join('')).join('')};
 f.addEventListener('input',sum);f.addEventListener('change',sum);
-nx.addEventListener('click',()=>{if(k<fs.length-1){k++;show();f.scrollIntoView({behavior:'smooth',block:'start'})}else{pr.textContent='Prototyp: poptávka by teď odešla v tomto tvaru. Nic se neodeslalo.'}});
+nx.addEventListener('click',()=>{if(k<fs.length-1){k++;show();f.scrollIntoView({behavior:'smooth',block:'start'})}else{const d=new FormData(f),o={};for(const [a,v] of d){if(v instanceof File){if(v.name)o[a]=v.name+' (přiložte prosím k e-mailu)';continue}if(!v)continue;o[a]=o[a]?o[a]+', '+v:v}const t=fs.map(x=>{const ns=[...new Set([...x.querySelectorAll('[name]')].map(e=>e.name))].filter(n=>o[n]);return ns.length?x.dataset.n.toUpperCase()+'\n'+ns.map(n=>n+': '+o[n]).join('\n'):''}).filter(Boolean).join('\n\n');location.href='mailto:ekord@ekord.cz?subject='+encodeURIComponent('Poptávka z webu')+'&body='+encodeURIComponent(t);pr.textContent='Otevřeli jsme vám e-mail s vyplněnou poptávkou, stačí ho odeslat. Pokud se nic neotevřelo, napište na ekord@ekord.cz.'}});
 bk.addEventListener('click',()=>{if(k>0){k--;show()}});
 show();
 })();
