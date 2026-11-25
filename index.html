@@ -37,6 +37,8 @@ h3{font-size:clamp(22px,1.9vw,28px);line-height:1.2}
 p{max-width:60ch;text-wrap:pretty}
 .eyebrow{font:600 12px/1 var(--sans);letter-spacing:.18em;text-transform:uppercase;color:var(--mute)}
 .lead{font-size:clamp(18px,1.4vw,21px);color:var(--ink-2)}
+.eyebrow+h2,.eyebrow+h1{margin-top:18px}
+div:has(>.eyebrow)+h2{margin-top:18px}
 section{padding-block:clamp(88px,11vw,180px)}
 
 .btn{display:inline-flex;align-items:center;gap:12px;min-height:52px;padding:0 26px;border-radius:999px;border:0;cursor:pointer;
@@ -422,7 +424,7 @@ section{padding-block:clamp(88px,11vw,180px)}
 <section class="tour" id="prohlidka" aria-label="Prohlídka domu">
   <div class="wrap">
     <div class="head">
-      <div><p class="eyebrow rv" style="color:#8E95A3">Prohlídka</p><h2 class="rv d1">Projděte si dům</h2></div>
+      <div><p class="eyebrow rv" style="color:#8E95A3">Prohlídka</p><h2 class="rv d1" style="margin-top:18px">Projděte si dům</h2></div>
       <div class="seg" role="tablist" aria-label="Způsob prohlídky">
         <button role="tab" aria-selected="true" data-t="walk">Procházka</button>
         <button role="tab" aria-selected="false" data-t="model">3D model</button>
@@ -569,7 +571,7 @@ if(svg){const eyes=[...svg.querySelectorAll('.eye')],kind=e=>e.getAttribute('ari
 $$('.planwrap .seg button').forEach(b=>b.addEventListener('click',()=>{$$('.planwrap .seg button').forEach(x=>x.setAttribute('aria-selected',String(x===b)));
   $$('.planwrap .pv').forEach(p=>p.classList.toggle('on',p.id==='pv-'+b.dataset.p))}));
 // slunce v řezu: polední výška slunce na 50° s. š., přesah střechy a okno podle domu 182j47
-const S={lat:50,over:1.38,soffit:2.55,head:2.20,room:7.2},K=62,X=m=>230+m*K,Y=z=>300-z*K;
+const S={lat:50,over:1.38,soffit:2.55,head:2.20,room:7.0},K=62,X=m=>310+m*K,Y=z=>300-z*K;
 const MON=['leden','únor','březen','duben','květen','červen','červenec','srpen','září','říjen','listopad','prosinec'];
 const MLOC=['v lednu','v únoru','v březnu','v dubnu','v květnu','v červnu','v červenci','v srpnu','v září','v říjnu','v listopadu','v prosinci'];
 const sv=$('#sunsvg'),mr=$('#month'),ml=$('#mon'),rd=$('#sunread');
@@ -580,7 +582,7 @@ function drawSun(){const m=+mr.value,doy=15+30.4*m,dec=23.44*Math.sin(2*Math.PI*
   const ex=X(-S.over),ey=Y(S.soffit),hz=Math.max(0,zCut);
   const shadow=`<line x1="${ex-cx*520}" y1="${ey-cy*520}" x2="${ex}" y2="${ey}" stroke="#E9B44C" stroke-dasharray="4 6" stroke-width="1.2"/><line x1="${ex}" y1="${ey}" x2="${X(Math.min(0,-S.over+S.soffit/te))}" y2="${Y(zCut>0?zCut:0)}" stroke="#E9B44C" stroke-dasharray="4 6" stroke-width="1.2"/>`;
   const patch=depth>0?`<rect x="${X(0)}" y="${Y(0)-4}" width="${depth*K}" height="6" rx="3" fill="#E9B44C"><animate attributeName="opacity" values=".7;1;.7" dur="3s" repeatCount="indefinite"/></rect>`:'';
-  const sx=X(0)-cx*330,sy=Y(1.1)-cy*330;
+  const t0=Math.min((X(0)-44)/cx,(Y(1.1)-44)/cy,360),sx=X(0)-cx*t0,sy=Y(1.1)-cy*t0;
   sv.innerHTML=`<defs><linearGradient id="sk" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="${el>45?'#E3ECF7':'#F3EBDD'}"/><stop offset="1" stop-color="#fff"/></linearGradient></defs>
   <rect width="760" height="360" fill="url(#sk)" rx="10"/>
   <rect x="${X(0)}" y="${Y(S.soffit+.32)}" width="${S.room*K}" height="${(S.soffit+.32)*K}" fill="#FBFAF6"/>
@@ -590,7 +592,7 @@ function drawSun(){const m=+mr.value,doy=15+30.4*m,dec=23.44*Math.sin(2*Math.PI*
   <rect x="${X(0)-17}" y="${Y(S.soffit+.32)}" width="34" height="${(S.soffit+.32-S.head)*K}" fill="#0C3165"/>
   <path d="M${ex-6} ${ey} L${X(S.room)} ${ey-S.room*K*.12} L${X(S.room)} ${ey-S.room*K*.12-14} L${ex-14} ${ey-10} Z" fill="#0C3165"/>
   <text x="${X(S.room/2)}" y="${Y(0)+30}" text-anchor="middle" font-size="13" fill="#767B88" font-family="Inter Variable,sans-serif">pokoj</text>
-  <text x="${X(-2)}" y="${Y(0)+30}" text-anchor="middle" font-size="13" fill="#767B88" font-family="Inter Variable,sans-serif">zahrada</text>
+  <text x="${X(-2.6)}" y="${Y(0)+30}" text-anchor="middle" font-size="13" fill="#767B88" font-family="Inter Variable,sans-serif">zahrada</text>
   <circle cx="${sx}" cy="${sy}" r="30" fill="#E9B44C" fill-opacity=".16"/><circle cx="${sx}" cy="${sy}" r="15" fill="#E9B44C"/>
   <text x="${sx+36}" y="${sy+5}" font-size="14" fill="#1D2433" font-family="Inter Variable,sans-serif">${Math.round(el)}°</text>`;
   ml.textContent=MON[m];
