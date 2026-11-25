@@ -1,0 +1,118 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1">
+<title>Procházka domem 182j47</title>
+<meta name="robots" content="noindex, nofollow">
+<style>
+:root{--navy:#0C3165;--sky:#81A1C9;--ink:#233049}
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;background:#e9edf3;overflow:hidden;font:15px/1.4 Tahoma,Verdana,"Segoe UI",sans-serif;color:var(--ink)}
+canvas{display:block;width:100%;height:100%;touch-action:none}
+.ui{position:absolute;left:16px;right:16px;bottom:16px;display:flex;flex-wrap:wrap;gap:8px;align-items:center;pointer-events:none}
+.ui button{pointer-events:auto;font:inherit;color:var(--navy);background:rgba(255,255,255,.92);border:1px solid rgba(12,49,101,.25);min-height:40px;padding:0 16px;cursor:pointer}
+.ui button.on{background:var(--navy);color:#fff;border-color:var(--navy)}
+.hint{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);background:rgba(255,255,255,.94);padding:22px 26px;max-width:min(420px,calc(100% - 32px));text-align:center;box-shadow:0 10px 40px rgba(12,49,101,.15)}
+.hint h1{font-weight:400;font-size:22px;color:var(--navy);margin-bottom:8px}
+.hint p{margin-bottom:14px}
+.hint button{font:700 15px Tahoma,sans-serif;color:#fff;background:var(--navy);border:0;min-height:46px;padding:0 26px;cursor:pointer}
+.load{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;color:var(--navy)}
+.cross{position:absolute;left:50%;top:50%;width:6px;height:6px;margin:-3px;border-radius:50%;background:rgba(255,255,255,.8);box-shadow:0 0 0 1px rgba(12,49,101,.4);pointer-events:none;display:none}
+.pad{position:absolute;left:24px;bottom:76px;width:110px;height:110px;border-radius:50%;border:1px solid rgba(12,49,101,.3);background:rgba(255,255,255,.35);display:none;pointer-events:none}
+.pad i{position:absolute;left:50%;top:50%;width:44px;height:44px;margin:-22px;border-radius:50%;background:rgba(12,49,101,.55)}
+@media (hover:none){.pad{display:block}}
+</style>
+</head>
+<body>
+<div class="load" id="load">Načítám model domu…</div>
+<div class="cross" id="cross"></div>
+<div class="pad" id="pad"><i></i></div>
+<div class="hint" id="hint" hidden>
+  <h1>Procházka domem</h1>
+  <p id="htxt">Klikněte do obrazu. Myší se rozhlížíte, klávesami W A S D nebo šipkami chodíte. Esc vás pustí ven.</p>
+  <button id="go">Začít</button>
+</div>
+<div class="ui" id="ui"></div>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}</script>
+<script type="module">
+import * as THREE from 'three';
+import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
+import {DRACOLoader} from 'three/addons/loaders/DRACOLoader.js';
+import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
+
+const EYE=1.6, R=0.3, SPEED=1.5;
+// místa v souřadnicích výkresu (x, y; Blender) -> three (x, z = -y)
+const SPOTS=[
+  ['Obývací pokoj',[11.6,-10.3],[15.5,-10.3]],
+  ['Kuchyně',[12.25,-11.7],[11.3,-6.9]],
+  ['Jídelna',[14.4,-11.6],[13.0,-15.5]],
+  ['Ložnice',[7.1,-13.2],[5.9,-14.2]],
+  ['Pokoj',[21.2,-13.9],[18.1,-11.7]],
+];
+const touch=matchMedia('(hover:none)').matches;
+const renderer=new THREE.WebGLRenderer({antialias:true});
+renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setSize(innerWidth,innerHeight);
+renderer.toneMapping=THREE.AgXToneMapping;renderer.toneMappingExposure=1.05;renderer.outputColorSpace=THREE.SRGBColorSpace;
+document.body.prepend(renderer.domElement);
+const scene=new THREE.Scene();scene.background=new THREE.Color('#dfe6ef');
+const pm=new THREE.PMREMGenerator(renderer);scene.environment=pm.fromScene(new RoomEnvironment(),0.04).texture;
+scene.add(new THREE.HemisphereLight(0xffffff,0xb9a98f,0.55));
+const sun=new THREE.DirectionalLight(0xfff1dc,1.2);sun.position.set(-20,30,25);scene.add(sun);
+const cam=new THREE.PerspectiveCamera(70,innerWidth/innerHeight,0.05,400);cam.rotation.order='YXZ';
+addEventListener('resize',()=>{cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)});
+
+const solid=[];let yaw=0,pitch=0;
+const draco=new DRACOLoader();draco.setDecoderPath('https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/libs/draco/gltf/');
+const gl=new GLTFLoader();gl.setDRACOLoader(draco);
+const src=new URLSearchParams(location.search).get('m')||'3d/182j47.glb';
+gl.load(src,g=>{
+  g.scene.traverse(o=>{if(o.isMesh){
+    const n=(o.name+' '+(o.parent?o.parent.name:'')).toLowerCase();
+    if(/flame|glow|led|haze|cloud/.test(n))return;
+    if(/glass|glazing/.test(n)){o.material.depthWrite=false}
+    solid.push(o)}});
+  scene.add(g.scene);document.getElementById('load').remove();
+  go(0);document.getElementById('hint').hidden=false;
+  if(touch)document.getElementById('htxt').textContent='Tažením po obraze se rozhlížíte, kruhem vlevo dole chodíte. Tlačítky dole přeskočíte do jiné místnosti.';
+},undefined,e=>{document.getElementById('load').textContent='Model se nepodařilo načíst.'});
+
+const ui=document.getElementById('ui');
+SPOTS.forEach((s,i)=>{const b=document.createElement('button');b.textContent=s[0];b.onclick=()=>go(i);ui.append(b)});
+function go(i){const [,p,t]=SPOTS[i];cam.position.set(p[0],EYE,-p[1]);yaw=Math.atan2(-(t[0]-p[0]),-(-t[1]+p[1]));pitch=-0.05;
+  [...ui.children].forEach((b,k)=>b.classList.toggle('on',k===i));snap()}
+
+const ray=new THREE.Raycaster();const down=new THREE.Vector3(0,-1,0);
+function snap(){ray.set(new THREE.Vector3(cam.position.x,cam.position.y+0.2,cam.position.z),down);ray.far=3;
+  const h=ray.intersectObjects(solid,false)[0];if(h)cam.position.y=h.point.y+EYE}
+function blocked(dir,dist){for(const y of [0.45,1.1]){ray.set(new THREE.Vector3(cam.position.x,cam.position.y-EYE+y,cam.position.z),dir);ray.far=dist+R;
+  if(ray.intersectObjects(solid,false).length)return true}return false}
+
+const keys={};addEventListener('keydown',e=>{keys[e.code]=true});addEventListener('keyup',e=>{keys[e.code]=false});
+const cv=renderer.domElement;
+document.getElementById('go').onclick=()=>{document.getElementById('hint').hidden=true;if(!touch)cv.requestPointerLock()};
+cv.addEventListener('click',()=>{if(!touch&&document.pointerLockElement!==cv){document.getElementById('hint').hidden=true;cv.requestPointerLock()}});
+document.addEventListener('pointerlockchange',()=>{document.getElementById('cross').style.display=document.pointerLockElement===cv?'block':'none'});
+document.addEventListener('mousemove',e=>{if(document.pointerLockElement!==cv)return;yaw-=e.movementX*0.0022;pitch=Math.max(-1.3,Math.min(1.3,pitch-e.movementY*0.0022))});
+// dotyk: levá dolní část = chůze (virtuální páka), jinde rozhlížení tažením
+let look=null,move=null,mv={x:0,y:0};const pad=document.getElementById('pad'),knob=pad.firstElementChild;
+cv.addEventListener('pointerdown',e=>{if(e.pointerType!=='touch'&&e.pointerType!=='pen'){return}document.getElementById('hint').hidden=true;
+  const r=pad.getBoundingClientRect();if(e.clientX<r.right+40&&e.clientY>r.top-40){move={id:e.pointerId,cx:r.left+r.width/2,cy:r.top+r.height/2}}else look={id:e.pointerId,x:e.clientX,y:e.clientY}});
+cv.addEventListener('pointermove',e=>{if(look&&e.pointerId===look.id){yaw+=(e.clientX-look.x)*0.004;pitch=Math.max(-1.3,Math.min(1.3,pitch+(e.clientY-look.y)*0.004));look.x=e.clientX;look.y=e.clientY}
+  if(move&&e.pointerId===move.id){let dx=e.clientX-move.cx,dy=e.clientY-move.cy;const l=Math.hypot(dx,dy),m=40;if(l>m){dx*=m/l;dy*=m/l}mv={x:dx/m,y:dy/m};knob.style.transform=`translate(${dx}px,${dy}px)`}});
+const end=e=>{if(look&&e.pointerId===look.id)look=null;if(move&&e.pointerId===move.id){move=null;mv={x:0,y:0};knob.style.transform=''}};
+cv.addEventListener('pointerup',end);cv.addEventListener('pointercancel',end);
+
+const clock=new THREE.Clock();
+renderer.setAnimationLoop(()=>{const dt=Math.min(0.05,clock.getDelta());
+  let f=(keys.KeyW||keys.ArrowUp?1:0)-(keys.KeyS||keys.ArrowDown?1:0)-mv.y,s=(keys.KeyD?1:0)-(keys.KeyA?1:0)+mv.x;
+  if(!touch){if(keys.ArrowLeft)yaw+=1.6*dt;if(keys.ArrowRight)yaw-=1.6*dt}
+  cam.rotation.set(pitch,yaw,0);
+  if(f||s){const fw=new THREE.Vector3(-Math.sin(yaw),0,-Math.cos(yaw)),rt=new THREE.Vector3(Math.cos(yaw),0,-Math.sin(yaw));
+    const d=fw.multiplyScalar(f).add(rt.multiplyScalar(s));const l=Math.min(1,d.length());d.normalize();const step=SPEED*l*dt*(keys.ShiftLeft?2:1);
+    if(!blocked(d,step)){cam.position.addScaledVector(d,step);snap()}
+    else{for(const ax of [new THREE.Vector3(Math.sign(d.x),0,0),new THREE.Vector3(0,0,Math.sign(d.z))]){if(ax.lengthSq()&&!blocked(ax,step*Math.abs(ax.x?d.x:d.z))){cam.position.addScaledVector(ax,step*Math.abs(ax.x?d.x:d.z));snap();break}}}}
+  renderer.render(scene,cam)});
+</script>
+</body>
+</html>
