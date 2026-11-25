@@ -44,7 +44,7 @@ import {RoomEnvironment} from 'three/addons/environments/RoomEnvironment.js';
 const EYE=1.6, R=0.3, SPEED=1.5;
 // místa v souřadnicích výkresu (x, y; Blender) -> three (x, z = -y)
 const SPOTS=[
-  ['Obývací pokoj',[11.6,-10.3],[15.5,-10.3]],
+  ['Obývací pokoj',[8.75,-11.25],[15.5,-9.6]],
   ['Kuchyně',[12.25,-11.7],[11.3,-6.9]],
   ['Jídelna',[14.4,-11.6],[13.0,-15.5]],
   ['Ložnice',[7.1,-13.2],[5.9,-14.2]],
@@ -53,11 +53,11 @@ const SPOTS=[
 const touch=matchMedia('(hover:none)').matches;
 const renderer=new THREE.WebGLRenderer({antialias:true});
 renderer.setPixelRatio(Math.min(devicePixelRatio,2));renderer.setSize(innerWidth,innerHeight);
-renderer.toneMapping=THREE.AgXToneMapping;renderer.toneMappingExposure=1.05;renderer.outputColorSpace=THREE.SRGBColorSpace;
+renderer.toneMapping=THREE.AgXToneMapping;renderer.toneMappingExposure=1.35;renderer.outputColorSpace=THREE.SRGBColorSpace;
 document.body.prepend(renderer.domElement);
 const scene=new THREE.Scene();scene.background=new THREE.Color('#dfe6ef');
 const pm=new THREE.PMREMGenerator(renderer);scene.environment=pm.fromScene(new RoomEnvironment(),0.04).texture;
-scene.add(new THREE.HemisphereLight(0xffffff,0xb9a98f,0.55));
+scene.add(new THREE.HemisphereLight(0xffffff,0xc9bba3,0.9));scene.add(new THREE.AmbientLight(0xffffff,0.35));
 const sun=new THREE.DirectionalLight(0xfff1dc,1.2);sun.position.set(-20,30,25);scene.add(sun);
 const cam=new THREE.PerspectiveCamera(70,innerWidth/innerHeight,0.05,400);cam.rotation.order='YXZ';
 addEventListener('resize',()=>{cam.aspect=innerWidth/innerHeight;cam.updateProjectionMatrix();renderer.setSize(innerWidth,innerHeight)});
@@ -69,7 +69,7 @@ const src=new URLSearchParams(location.search).get('m')||'3d/182j47.glb';
 gl.load(src,g=>{
   g.scene.traverse(o=>{if(o.isMesh){
     const n=(o.name+' '+(o.parent?o.parent.name:'')).toLowerCase();
-    if(/flame|glow|led|haze|cloud/.test(n))return;
+    if(/flame|glow|haze|cloud/.test(n)){o.visible=false;return}if(/led/.test(n))return;
     if(/glass|glazing/.test(n)){o.material.depthWrite=false}
     solid.push(o)}});
   scene.add(g.scene);document.getElementById('load').remove();
