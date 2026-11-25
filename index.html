@@ -301,7 +301,7 @@ section{padding-block:clamp(88px,11vw,180px)}
 <section class="hero" aria-label="Úvod">
   <div class="media">
     <img src="img/terasa_zlata.jpg" alt="Bungalov 182j47 ze zahrady, terasa ve večerním světle">
-    
+    <video muted loop playsinline autoplay preload="auto" poster="img/terasa_zlata.jpg" src="3d/hero.mp4" aria-hidden="true"></video>
   </div>
   <div class="cap wrap">
     <p class="eyebrow fadein">EKORD · Ing. Marian Groch</p>
@@ -436,7 +436,7 @@ section{padding-block:clamp(88px,11vw,180px)}
       <div class="pane on" id="t-walk"><div class="cover"><img src="img/interier_obyvak.jpg" alt=""><h3>Vejděte dovnitř</h3><p>Choďte domem jako na prohlídce. Na počítači klávesy W&nbsp;A&nbsp;S&nbsp;D a myš, na telefonu prst.</p><button class="btn light" type="button" data-open="walk">Vstoupit <span class="ar">→</span></button></div></div>
       <div class="pane" id="t-model"><div class="cover"><img src="img/model_poster.jpg" alt=""><h3>Dům jako model</h3><p>Otáčejte, přibližujte, sundejte střechu.</p><button class="btn light" type="button" data-open="model">Otevřít model <span class="ar">→</span></button></div></div>
       <div class="pane" id="t-pano"><div class="cover"><img src="img/interier_knihovna.jpg" alt=""><h3>Rozhlédněte se</h3><p>Snímky 360° z&nbsp;obývacího pokoje, ložnice a terasy.</p><button class="btn light" type="button" data-open="pano">Otevřít <span class="ar">→</span></button></div></div>
-      <div class="pane" id="t-fly"><video controls preload="none" playsinline poster="img/prulet_poster.jpg" src="3d/182j47_terasa_zlata_prulet.mp4"></video></div>
+      <div class="pane" id="t-fly"><video controls preload="none" playsinline poster="img/okruh_poster.jpg" src="3d/182j47_okruh.mp4"></video></div>
     </div>
     <p class="help" id="help">Procházka běží přímo v&nbsp;prohlížeči. <a href="walk.html" target="_blank" rel="noopener">Otevřít na celou obrazovku</a></p>
   </div>
@@ -603,7 +603,7 @@ let pl=null;const pb=$('#play');pb.addEventListener('click',()=>{if(pl){clearInt
   pb.setAttribute('aria-pressed','true');pb.textContent='Zastavit';pl=setInterval(()=>{mr.value=(+mr.value+1)%12;drawSun()},850)});
 // prohlídka: obsah se načte až na přání
 const panes={walk:$('#t-walk'),model:$('#t-model'),pano:$('#t-pano'),fly:$('#t-fly')},help=$('#help');
-const HELP={walk:'Procházka běží přímo v prohlížeči. <a href="walk.html" target="_blank" rel="noopener">Otevřít na celou obrazovku</a>',model:'Model otáčíte tažením, přibližujete kolečkem nebo dvěma prsty.',pano:'Rozhlížíte se tažením, šipky v obraze vedou do dalších míst.',fly:'Průlet nad terasou, renderovaný ze stejného modelu.'};
+const HELP={walk:'Procházka běží přímo v prohlížeči. <a href="walk.html" target="_blank" rel="noopener">Otevřít na celou obrazovku</a>',model:'Model otáčíte tažením, přibližujete kolečkem nebo dvěma prsty.',pano:'Rozhlížíte se tažením, šipky v obraze vedou do dalších míst.',fly:'Okruh kolem domu od zahrady ke vstupu, renderovaný ze stejného modelu.'};
 const tabs=$$('.tour .seg button');
 tabs.forEach(b=>b.addEventListener('click',()=>{const t=b.dataset.t;tabs.forEach(x=>x.setAttribute('aria-selected',String(x===b)));Object.entries(panes).forEach(([k,p])=>p.classList.toggle('on',k===t));
   help.innerHTML=HELP[t];const w=panes.walk.querySelector('iframe');if(w&&t!=='walk'){w.remove();panes.walk.querySelector('.cover').hidden=false}
