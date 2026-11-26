@@ -97,7 +97,7 @@ const cfg=fetch(base+'_walk.json').then(r=>r.ok?r.json():null).catch(()=>null);
 const load=u=>new Promise((ok,no)=>gl.load(u,ok,undefined,no));
 const sky=new Promise(ok=>new RGBELoader(mgr).load(base+'_sky.hdr',t=>ok(t),undefined,()=>ok(null)));
 
-const MIRRORS=[];
+const MIRRORS=[],PORTALS=[];
 // a bathroom mirror (its own quad in the model) becomes a real reflection; light quality keeps the plain surface
 function mirror(o){o.updateWorldMatrix(true,false);const p=o.geometry.attributes.position,v=[];
   for(let i=0;i<p.count;i++){const q=new THREE.Vector3().fromBufferAttribute(p,i).applyMatrix4(o.matrixWorld);if(!v.some(u=>u.distanceTo(q)<1e-3))v.push(q)}
@@ -123,8 +123,9 @@ function prep(root,collide){root.traverse(o=>{if(!o.isMesh)return;
 Promise.all([load(src),cfg,sky,load(base+'_okoli.glb').catch(()=>null)]).then(([g,c,hdr,env])=>{
   if(c&&c.spots&&c.spots.length){SPOTS=c.spots;HIDE=c.hide||HIDE}
   // daylight through the windows: a soft area light in every opening, facing into the room (portals, as in the renders)
-  for(const [x,y,z0,z1,nx,ny,w] of ((c&&c.portals)||[]).slice(0,14)){const L=new THREE.RectAreaLight(0xeef2f7,3.2,w,z1-z0);
-    L.position.set(x,(z0+z1)/2,-y);L.lookAt(x+nx,(z0+z1)/2,-(y+ny));scene.add(L)}
+  // (the 8 largest openings; each area light costs GPU time on every pixel, the light version has none)
+  for(const [x,y,z0,z1,nx,ny,w] of ((c&&c.portals)||[]).slice(0,8)){const L=new THREE.RectAreaLight(0xeef2f7,4.0,w,z1-z0);
+    L.position.set(x,(z0+z1)/2,-y);L.lookAt(x+nx,(z0+z1)/2,-(y+ny));L.visible=HQ;scene.add(L);PORTALS.push(L)}
   if(hdr){hdr.mapping=THREE.EquirectangularReflectionMapping;scene.background=hdr;scene.environment=hdr;
     scene.backgroundRotation.y=scene.environmentRotation.y=THREE.MathUtils.degToRad((c&&c.sky_rot)||200)}
   prep(g.scene,true);scene.add(g.scene);
@@ -134,11 +135,11 @@ Promise.all([load(src),cfg,sky,load(base+'_okoli.glb').catch(()=>null)]).then(([
   if(touch)document.getElementById('htxt').textContent='Tažením po obraze se rozhlížíte, kruhem vlevo dole chodíte. Tlačítky dole přeskočíte do jiné místnosti.';
 }).catch(e=>{console.error(e);document.getElementById('ltxt').textContent='Model se nepodařilo načíst.'});
 
-if(Q.has('debug'))window.__walk={cam,scene,renderer,look:(y,p)=>{yaw=y;pitch=p},go:i=>go(i),q:v=>{HQ=v;setQ()}};
+if(Q.has('debug'))window.__walk={cam,scene,renderer,composer,PORTALS,look:(y,p)=>{yaw=y;pitch=p},go:i=>go(i),q:v=>{HQ=v;setQ()}};
 const ui=document.getElementById('ui');
 function buttons(){ui.innerHTML='';SPOTS.forEach((s,i)=>{const b=document.createElement('button');b.textContent=s[0];b.onclick=()=>go(i);ui.append(b)});
   const q=document.createElement('button');q.className='q';q.onclick=()=>{HQ=!HQ;setQ()};ui.append(q);setQ()}
-function setQ(){ao.enabled=HQ;for(const [r,o] of MIRRORS){r.visible=HQ;o.visible=!HQ}renderer.shadowMap.enabled=HQ;sun.castShadow=HQ;scene.traverse(o=>{if(o.material)o.material.needsUpdate=true});
+function setQ(){ao.enabled=HQ;PORTALS.forEach(l=>l.visible=HQ);for(const [r,o] of MIRRORS){r.visible=HQ;o.visible=!HQ}renderer.shadowMap.enabled=HQ;sun.castShadow=HQ;scene.traverse(o=>{if(o.material)o.material.needsUpdate=true});
   const q=ui.querySelector('.q');if(q)q.textContent=HQ?'Vyšší kvalita: zap':'Vyšší kvalita: vyp'}
 function go(i){const [,p,t]=SPOTS[i];cam.position.set(p[0],EYE,-p[1]);yaw=Math.atan2(-(t[0]-p[0]),-(-t[1]+p[1]));pitch=-0.05;
   [...ui.children].forEach((b,k)=>b.classList.toggle('on',k===i));snap()}
@@ -182,7 +183,7 @@ renderer.setAnimationLoop(()=>{const dt=Math.min(0.05,clock.getDelta());
     if(!blocked(d,step)){cam.position.addScaledVector(d,step);snap()}
     else{for(const ax of [new THREE.Vector3(Math.sign(d.x),0,0),new THREE.Vector3(0,0,Math.sign(d.z))]){if(ax.lengthSq()&&!blocked(ax,step*Math.abs(ax.x?d.x:d.z))){cam.position.addScaledVector(ax,step*Math.abs(ax.x?d.x:d.z));snap();break}}}}
   if(solid.length){if((++fk2)%6===0)inIn=indoor();inside+=(inIn-inside)*Math.min(1,dt*3);
-    scene.environmentIntensity=1.0-0.35*inside;renderer.toneMappingExposure=1.0+0.55*inside;hemi.intensity=0.25-0.1*inside}
+    scene.environmentIntensity=1.0-(HQ?0.35:0.1)*inside;renderer.toneMappingExposure=1.0+0.55*inside;hemi.intensity=0.25-0.1*inside}
   composer.render()});
 </script>
 </body>
