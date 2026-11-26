@@ -48,12 +48,10 @@ import {EffectComposer} from 'three/addons/postprocessing/EffectComposer.js';
 import {RenderPass} from 'three/addons/postprocessing/RenderPass.js';
 import {GTAOPass} from 'three/addons/postprocessing/GTAOPass.js';
 import {OutputPass} from 'three/addons/postprocessing/OutputPass.js';
-import {RectAreaLightUniformsLib} from 'three/addons/lights/RectAreaLightUniformsLib.js';
 import {Reflector} from 'three/addons/objects/Reflector.js';
 // walking casts rays every frame against a model of over a million triangles: a BVH per mesh makes them instant
 import {computeBoundsTree,acceleratedRaycast} from 'three-mesh-bvh';
 THREE.BufferGeometry.prototype.computeBoundsTree=computeBoundsTree;THREE.Mesh.prototype.raycast=acceleratedRaycast;
-RectAreaLightUniformsLib.init();
 
 const EYE=1.6, R=0.3, SPEED=1.5;
 // F124: starts come from <model>_walk.json (_tools/walk_spots.py: solved from the walkable free space of the model,
@@ -81,7 +79,8 @@ const hemi=new THREE.HemisphereLight(0xffffff,0xb9ad98,0.25);scene.add(hemi);
 
 const composer=new EffectComposer(renderer,new THREE.WebGLRenderTarget(innerWidth,innerHeight,{samples:4,type:THREE.HalfFloatType}));
 composer.addPass(new RenderPass(scene,cam));
-const ao=new GTAOPass(scene,cam,innerWidth,innerHeight);ao.updateGtaoMaterial({radius:0.45,distanceExponent:1.6,thickness:1.2,scale:1.0,samples:16});
+const ao=new GTAOPass(scene,cam,innerWidth/2,innerHeight/2);ao.updateGtaoMaterial({radius:0.45,distanceExponent:1.6,thickness:1.2,scale:1.0,samples:8});
+{const ss=ao.setSize.bind(ao);ao.setSize=(w,h)=>ss(Math.ceil(w/2),Math.ceil(h/2))}   // ambient occlusion at half resolution
 ao.blendIntensity=0.9;composer.addPass(ao);
 composer.addPass(new OutputPass());
 let HQ=Q.get('q')!=='0';ao.enabled=HQ;
@@ -123,9 +122,11 @@ function prep(root,collide){root.traverse(o=>{if(!o.isMesh)return;
 Promise.all([load(src),cfg,sky,load(base+'_okoli.glb').catch(()=>null)]).then(([g,c,hdr,env])=>{
   if(c&&c.spots&&c.spots.length){SPOTS=c.spots;HIDE=c.hide||HIDE}
   // daylight through the windows: a soft area light in every opening, facing into the room (portals, as in the renders)
-  // (the 8 largest openings; each area light costs GPU time on every pixel, the light version has none)
-  for(const [x,y,z0,z1,nx,ny,w] of ((c&&c.portals)||[]).slice(0,8)){const L=new THREE.RectAreaLight(0xeef2f7,4.0,w,z1-z0);
-    L.position.set(x,(z0+z1)/2,-y);L.lookAt(x+nx,(z0+z1)/2,-(y+ny));L.visible=HQ;scene.add(L);PORTALS.push(L)}
+  // (a wide soft spot light just outside each of the 10 largest openings, aimed into the room: the look of window light
+  // at a fraction of the cost of area lights; the light version has none)
+  for(const [x,y,z0,z1,nx,ny,w] of ((c&&c.portals)||[]).slice(0,10)){const h=(z0+z1)/2,a=Math.max(w,z1-z0);
+    const L=new THREE.SpotLight(0xeef2f7,6*a,9,1.15,1,1.6);L.position.set(x-nx*0.9,h+0.2,-(y-ny*0.9));L.target.position.set(x+nx*3,0.4,-(y+ny*3));
+    L.visible=HQ;scene.add(L,L.target);PORTALS.push(L)}
   if(hdr){hdr.mapping=THREE.EquirectangularReflectionMapping;scene.background=hdr;scene.environment=hdr;
     scene.backgroundRotation.y=scene.environmentRotation.y=THREE.MathUtils.degToRad((c&&c.sky_rot)||200)}
   prep(g.scene,true);scene.add(g.scene);
