@@ -111,6 +111,7 @@ Promise.all([load(src),cfg,sky,load(base+'_okoli.glb').catch(()=>null)]).then(([
   if(touch)document.getElementById('htxt').textContent='Tažením po obraze se rozhlížíte, kruhem vlevo dole chodíte. Tlačítky dole přeskočíte do jiné místnosti.';
 }).catch(e=>{console.error(e);document.getElementById('ltxt').textContent='Model se nepodařilo načíst.'});
 
+if(Q.has('debug'))window.__walk={cam,scene,renderer,look:(y,p)=>{yaw=y;pitch=p},go:i=>go(i),q:v=>{HQ=v;setQ()}};
 const ui=document.getElementById('ui');
 function buttons(){ui.innerHTML='';SPOTS.forEach((s,i)=>{const b=document.createElement('button');b.textContent=s[0];b.onclick=()=>go(i);ui.append(b)});
   const q=document.createElement('button');q.className='q';q.onclick=()=>{HQ=!HQ;setQ()};ui.append(q);setQ()}
