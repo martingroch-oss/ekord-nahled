@@ -1,0 +1,2595 @@
+[
+ {
+  "slug": "b58g1z",
+  "title": "B 58g1Z",
+  "desc": "Dům Ekord B 58g1Z",
+  "series": [
+   "b"
+  ],
+  "m2": 58,
+  "persons": null,
+  "notes": [],
+  "plan": {
+   "kind": "img",
+   "thumb": "img/domy/b58g1z_vykres.jpg",
+   "big": "img/domy/b58g1z_vykres.jpg",
+   "w": 1600,
+   "h": 1110
+  },
+  "photo_files": [
+   "img/domy/foto/b58g1z_1.jpg",
+   "img/domy/foto/b58g1z_2.jpg"
+  ],
+  "pdf": "pdf/b58g1z.pdf",
+  "reader": "b58g1zpudcolor",
+  "why": [
+   "zdi 0.02 plochy",
+   "málo příček",
+   "bez kuchyně",
+   "málo vybavení",
+   "příček 0.1 m na 10 m²"
+  ],
+  "top2011": false
+ },
+ {
+  "slug": "72a96",
+  "title": "72a96",
+  "desc": "Dům Ekord 72a96 - pro 3 osoby",
+  "series": [
+   "mini",
+   "jine"
+  ],
+  "m2": 72,
+  "persons": "pro 3 osoby",
+  "notes": [],
+  "plan": {
+   "kind": "img",
+   "thumb": "img/domy/72a96_vykres.jpg",
+   "big": "img/domy/72a96_vykres.jpg",
+   "w": 800,
+   "h": 670
+  },
+  "photo_files": [
+   "img/domy/foto/72a96_1.jpg"
+  ],
+  "pdf": null,
+  "reader": null,
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "s75gzy",
+  "title": "S 75gZY",
+  "desc": "Dům Ekord S 75gZY - pro 2 osoby",
+  "series": [
+   "s"
+  ],
+  "m2": 75,
+  "persons": "pro 2 osoby",
+  "notes": [],
+  "plan": {
+   "kind": "svg",
+   "thumb": "img/domy/s75gzy_nahled.svg",
+   "big": "img/domy/s75gzy_pudorys.svg",
+   "roof": "img/domy/s75gzy_strecha.svg",
+   "rooms": [
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 50.7
+    },
+    {
+     "name": "předsíň",
+     "area": 4.5
+    }
+   ],
+   "beds": 1
+  },
+  "photo_files": [
+   "img/domy/foto/s75gzy_1.jpg",
+   "img/domy/foto/s75gzy_2.jpg"
+  ],
+  "pdf": "pdf/s75gzy.pdf",
+  "reader": "s-75",
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "s78gzy",
+  "title": "S 78gZY",
+  "desc": "Dům Ekord S 78gZY - pro 2 osoby",
+  "series": [
+   "s"
+  ],
+  "m2": 78,
+  "persons": "pro 2 osoby",
+  "notes": [],
+  "plan": {
+   "kind": "svg",
+   "thumb": "img/domy/s78gzy_nahled.svg",
+   "big": "img/domy/s78gzy_pudorys.svg",
+   "roof": "img/domy/s78gzy_strecha.svg",
+   "rooms": [
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 53.4
+    },
+    {
+     "name": "předsíň",
+     "area": 4.5
+    }
+   ],
+   "beds": 1
+  },
+  "photo_files": [
+   "img/domy/foto/s78gzy_1.jpg"
+  ],
+  "pdf": "pdf/s78gzy.pdf",
+  "reader": "s-78",
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "86a63",
+  "title": "86a63",
+  "desc": "Dům Ekord 86a63 - pro 3 osoby",
+  "series": [
+   "mini"
+  ],
+  "m2": 86,
+  "persons": "pro 3 osoby",
+  "notes": [],
+  "plan": {
+   "kind": "img",
+   "thumb": "img/domy/86a63_vykres.jpg",
+   "big": "img/domy/86a63_vykres.jpg",
+   "w": 800,
+   "h": 594
+  },
+  "photo_files": [
+   "img/domy/foto/86a63_1.jpg"
+  ],
+  "pdf": null,
+  "reader": null,
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "90a63",
+  "title": "90a63",
+  "desc": "Dům Ekord 90a63 - pro 3 osoby",
+  "series": [
+   "mini"
+  ],
+  "m2": 90,
+  "persons": "pro 3 osoby",
+  "notes": [],
+  "plan": {
+   "kind": "img",
+   "thumb": "img/domy/90a63_vykres.jpg",
+   "big": "img/domy/90a63_vykres.jpg",
+   "w": 800,
+   "h": 705
+  },
+  "photo_files": [
+   "img/domy/foto/90a63_1.jpg"
+  ],
+  "pdf": null,
+  "reader": null,
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "b93g8y",
+  "title": "B 93g8Y",
+  "desc": "Dům Ekord mini B 93g8Y - pro 4 osoby",
+  "series": [
+   "mini",
+   "b"
+  ],
+  "m2": 93,
+  "persons": "pro 4 osoby",
+  "notes": [],
+  "plan": {
+   "kind": "svg",
+   "thumb": "img/domy/b93g8y_nahled.svg",
+   "big": "img/domy/b93g8y_pudorys.svg",
+   "roof": "img/domy/b93g8y_strecha.svg",
+   "rooms": [
+    {
+     "name": "pokoj",
+     "area": 12.8
+    },
+    {
+     "name": "ložnice",
+     "area": 12.8
+    },
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 33.9
+    },
+    {
+     "name": "předsíň",
+     "area": 15.3
+    },
+    {
+     "name": "předsíň",
+     "area": 4.3
+    }
+   ],
+   "beds": 3
+  },
+  "photo_files": [
+   "img/domy/foto/b93g8y_1.jpg",
+   "img/domy/foto/b93g8y_2.jpg",
+   "img/domy/foto/b93g8y_3.jpg",
+   "img/domy/foto/b93g8y_4.jpg"
+  ],
+  "pdf": "pdf/b93g8y.pdf",
+  "reader": "b93g8ypdtxt",
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "b99a53",
+  "title": "B 99a53",
+  "desc": "Dům Ekord mini z buněk B 99a53 pro 4 osoby",
+  "series": [
+   "mini",
+   "z",
+   "b"
+  ],
+  "m2": 99,
+  "persons": "pro 4 osoby",
+  "notes": [],
+  "plan": {
+   "kind": "img",
+   "thumb": "img/domy/b99a53_vykres.jpg",
+   "big": "img/domy/b99a53_vykres.jpg",
+   "w": 1600,
+   "h": 1146
+  },
+  "photo_files": [
+   "img/domy/foto/b99a53_1.jpg",
+   "img/domy/foto/b99a53_2.jpg",
+   "img/domy/foto/b99a53_3.jpg",
+   "img/domy/foto/b99a53_4.jpg"
+  ],
+  "pdf": "pdf/b99a53.pdf",
+  "reader": "b99a53",
+  "why": [
+   "zdi 0.03 plochy",
+   "plocha mimo o 440 %",
+   "příček 1.4 m na 10 m²"
+  ],
+  "top2011": false
+ },
+ {
+  "slug": "101a21",
+  "title": "101a21",
+  "desc": "Dům Ekord 101a21 pro malou rodinu",
+  "series": [
+   "3-1"
+  ],
+  "m2": 101,
+  "persons": null,
+  "notes": [],
+  "plan": {
+   "kind": "img",
+   "thumb": "img/domy/101a21_vykres.jpg",
+   "big": "img/domy/101a21_vykres.jpg",
+   "w": 581,
+   "h": 415
+  },
+  "photo_files": [
+   "img/domy/foto/101a21_1.jpg"
+  ],
+  "pdf": null,
+  "reader": null,
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "104g29-flexi",
+  "title": "104g29-flexi",
+  "desc": "Dům Ekord 104g29-flexi - pro 4 osoby (\"flexi\" označuje výhodný mnohovariantní stavebnicový půdorys)",
+  "series": [
+   "mini"
+  ],
+  "m2": 104,
+  "persons": "pro 4 osoby (\"flexi\" označuje výhodný mnohovariantní stavebnicový půdorys)",
+  "notes": [],
+  "plan": {
+   "kind": "svg",
+   "thumb": "img/domy/104g29-flexi_nahled.svg",
+   "big": "img/domy/104g29-flexi_pudorys.svg",
+   "roof": "img/domy/104g29-flexi_strecha.svg",
+   "rooms": [
+    {
+     "name": "koupelna",
+     "area": 8.2
+    },
+    {
+     "name": "WC",
+     "area": 2.4
+    },
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 65.6
+    }
+   ],
+   "beds": 2
+  },
+  "photo_files": [
+   "img/domy/foto/104g29-flexi_1.jpg",
+   "img/domy/foto/104g29-flexi_2.jpg",
+   "img/domy/foto/104g29-flexi_3.jpg"
+  ],
+  "pdf": "pdf/104g29-flexi.pdf",
+  "reader": "104g29-flexi",
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "s104gzy",
+  "title": "S 104gZY",
+  "desc": "Dům Ekord S 104gZY",
+  "series": [
+   "s"
+  ],
+  "m2": 104,
+  "persons": null,
+  "notes": [],
+  "plan": {
+   "kind": "svg",
+   "thumb": "img/domy/s104gzy_nahled.svg",
+   "big": "img/domy/s104gzy_pudorys.svg",
+   "roof": "img/domy/s104gzy_strecha.svg",
+   "rooms": [
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 73.7
+    },
+    {
+     "name": "předsíň",
+     "area": 4.5
+    }
+   ],
+   "beds": 2
+  },
+  "photo_files": [
+   "img/domy/foto/s104gzy_1.jpg"
+  ],
+  "pdf": "pdf/s104gzy.pdf",
+  "reader": "s-104",
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "108ay1",
+  "title": "108aY1",
+  "desc": "Dům Ekord 108aY1 - až pro 4 osoby",
+  "series": [
+   "mini"
+  ],
+  "m2": 108,
+  "persons": "až pro 4 osoby",
+  "notes": [],
+  "plan": {
+   "kind": "img",
+   "thumb": "img/domy/108ay1_vykres.jpg",
+   "big": "img/domy/108ay1_vykres.jpg",
+   "w": 800,
+   "h": 736
+  },
+  "photo_files": [
+   "img/domy/foto/108ay1_1.jpg"
+  ],
+  "pdf": null,
+  "reader": null,
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "110g78-flexi",
+  "title": "110g78-flexi",
+  "desc": "Dům Ekord 110g78-flexi - až pro 3 (po zvětšení až 4) osoby",
+  "series": [
+   "3-1"
+  ],
+  "m2": 110,
+  "persons": null,
+  "notes": [],
+  "plan": {
+   "kind": "svg",
+   "thumb": "img/domy/110g78-flexi_nahled.svg",
+   "big": "img/domy/110g78-flexi_pudorys.svg",
+   "roof": "img/domy/110g78-flexi_strecha.svg",
+   "rooms": [
+    {
+     "name": "WC",
+     "area": 1.9
+    },
+    {
+     "name": "předsíň",
+     "area": 12.4
+    },
+    {
+     "name": "koupelna",
+     "area": 6.2
+    },
+    {
+     "name": "ložnice",
+     "area": 14.4
+    },
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 44.9
+    },
+    {
+     "name": "pokoj",
+     "area": 10.7
+    }
+   ],
+   "beds": 2
+  },
+  "photo_files": [
+   "img/domy/foto/110g78-flexi_1.jpg"
+  ],
+  "pdf": "pdf/110g78-flexi.pdf",
+  "reader": "110g78flexi",
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "111g23",
+  "title": "111g23",
+  "desc": "Dům Ekord 111g23 - pro 2 osoby",
+  "series": [
+   "mini"
+  ],
+  "m2": 111,
+  "persons": "pro 2 osoby",
+  "notes": [],
+  "plan": {
+   "kind": "img",
+   "thumb": "img/domy/111g23_vykres.jpg",
+   "big": "img/domy/111g23_vykres.jpg",
+   "w": 1600,
+   "h": 1868
+  },
+  "photo_files": [
+   "img/domy/foto/111g23_1.jpg",
+   "img/domy/foto/111g23_2.jpg"
+  ],
+  "pdf": "pdf/111g23.pdf",
+  "reader": "mini111g23ktlg",
+  "why": [
+   "bez zdí z řešiče",
+   "zdi 0.69 plochy",
+   "málo příček",
+   "bez kuchyně",
+   "málo vybavení",
+   "plocha mimo o 89 %",
+   "příček 0.0 m na 10 m²"
+  ],
+  "top2011": false
+ },
+ {
+  "slug": "b113g17",
+  "title": "B113g17",
+  "desc": "Dům Ekord B113g17 - pro 6 osob - z buněk TEKAZ - varianty z různého počtu buněk pro rekreační bydlení i pro rodinné domy",
+  "series": [
+   "z",
+   "b"
+  ],
+  "m2": 113,
+  "persons": "pro 6 osob",
+  "notes": [
+   "z buněk TEKAZ",
+   "varianty z různého počtu buněk pro rekreační bydlení i pro rodinné domy"
+  ],
+  "plan": {
+   "kind": "img",
+   "thumb": "img/domy/b113g17_vykres.jpg",
+   "big": "img/domy/b113g17_vykres.jpg",
+   "w": 1600,
+   "h": 957
+  },
+  "photo_files": [
+   "img/domy/foto/b113g17_1.jpg",
+   "img/domy/foto/b113g17_2.jpg"
+  ],
+  "pdf": "pdf/b113g17.pdf",
+  "reader": "b113g17",
+  "why": [
+   "zdi 0.06 plochy",
+   "plocha mimo o 121 %"
+  ],
+  "top2011": false
+ },
+ {
+  "slug": "120a51",
+  "title": "120a51",
+  "desc": "Dům Ekord 120a51 až pro 4 osoby",
+  "series": [
+   "4-1"
+  ],
+  "m2": 120,
+  "persons": "až pro 4 osoby",
+  "notes": [],
+  "plan": {
+   "kind": "svg",
+   "thumb": "img/domy/120a51_nahled.svg",
+   "big": "img/domy/120a51_pudorys.svg",
+   "roof": "img/domy/120a51_strecha.svg",
+   "rooms": [
+    {
+     "name": "koupelna",
+     "area": 4.0
+    },
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 53.1
+    },
+    {
+     "name": "ložnice",
+     "area": 33.6
+    },
+    {
+     "name": "pokoj",
+     "area": 9.5
+    }
+   ],
+   "beds": 3
+  },
+  "photo_files": [
+   "img/domy/foto/120a51_1.jpg"
+  ],
+  "pdf": "pdf/120a51.pdf",
+  "reader": "120a51",
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "s120gzy",
+  "title": "S 120gZY",
+  "desc": "Dům Ekord S 120gZY",
+  "series": [
+   "s"
+  ],
+  "m2": 120,
+  "persons": null,
+  "notes": [],
+  "plan": {
+   "kind": "svg",
+   "thumb": "img/domy/s120gzy_nahled.svg",
+   "big": "img/domy/s120gzy_pudorys.svg",
+   "roof": "img/domy/s120gzy_strecha.svg",
+   "rooms": [
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 78.6
+    },
+    {
+     "name": "předsíň",
+     "area": 4.5
+    }
+   ],
+   "beds": 4
+  },
+  "photo_files": [
+   "img/domy/foto/s120gzy_1.jpg"
+  ],
+  "pdf": "pdf/s120gzy.pdf",
+  "reader": "s-120",
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "122b12",
+  "title": "122b12",
+  "desc": "Dům Ekord 122b12 - až pro 4 osoby",
+  "series": [
+   "3-1"
+  ],
+  "m2": 122,
+  "persons": "až pro 4 osoby",
+  "notes": [],
+  "plan": {
+   "kind": "img",
+   "thumb": "img/domy/122b12_vykres.jpg",
+   "big": "img/domy/122b12_vykres.jpg",
+   "w": 800,
+   "h": 535
+  },
+  "photo_files": [
+   "img/domy/foto/122b12_1.jpg"
+  ],
+  "pdf": null,
+  "reader": null,
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "e123",
+  "title": "E 123",
+  "desc": "Domy Ekord E 123 - pro 2 a více osob",
+  "series": [
+   "e"
+  ],
+  "m2": 123,
+  "persons": "pro 2 a více osob",
+  "notes": [],
+  "plan": {
+   "kind": "img",
+   "thumb": "img/domy/e123_vykres.jpg",
+   "big": "img/domy/e123_vykres.jpg",
+   "w": 1600,
+   "h": 1015
+  },
+  "photo_files": [],
+  "pdf": "pdf/e123.pdf",
+  "reader": "easy123rezpud",
+  "why": [
+   "bez zdí z řešiče",
+   "málo příček",
+   "bez kuchyně",
+   "plocha mimo o 169 %",
+   "příček 0.0 m na 10 m²"
+  ],
+  "top2011": false
+ },
+ {
+  "slug": "126g3y",
+  "title": "126g3Y",
+  "desc": "Dům Ekord 126g3Y - až pro 4 osoby",
+  "series": [
+   "3-1"
+  ],
+  "m2": 126,
+  "persons": "až pro 4 osoby",
+  "notes": [],
+  "plan": {
+   "kind": "svg",
+   "thumb": "img/domy/126g3y_nahled.svg",
+   "big": "img/domy/126g3y_pudorys.svg",
+   "roof": "img/domy/126g3y_strecha.svg",
+   "rooms": [
+    {
+     "name": "koupelna",
+     "area": 5.7
+    },
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 45.7
+    },
+    {
+     "name": "předsíň",
+     "area": 5.1
+    },
+    {
+     "name": "šatna",
+     "area": 3.5
+    },
+    {
+     "name": "předsíň",
+     "area": 8.6
+    },
+    {
+     "name": "ložnice",
+     "area": 14.3
+    },
+    {
+     "name": "ložnice",
+     "area": 14.3
+    }
+   ],
+   "beds": 2
+  },
+  "photo_files": [
+   "img/domy/foto/126g3y_1.jpg",
+   "img/domy/foto/126g3y_2.jpg"
+  ],
+  "pdf": "pdf/126g3y.pdf",
+  "reader": "126g3y",
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "133h6z",
+  "title": "133h6Z",
+  "desc": "Dům Ekord 133h6Z - pro 5 osob",
+  "series": [
+   "mini",
+   "jine"
+  ],
+  "m2": 133,
+  "persons": "pro 5 osob",
+  "notes": [],
+  "plan": {
+   "kind": "svg",
+   "thumb": "img/domy/133h6z_nahled.svg",
+   "big": "img/domy/133h6z_pudorys.svg",
+   "roof": "img/domy/133h6z_strecha.svg",
+   "rooms": [
+    {
+     "name": "předsíň",
+     "area": 6.5
+    },
+    {
+     "name": "obývací pokoj",
+     "area": 8.2
+    },
+    {
+     "name": "ložnice",
+     "area": 12.7
+    },
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 49.0
+    },
+    {
+     "name": "pokoj",
+     "area": 8.8
+    },
+    {
+     "name": "pokoj",
+     "area": 8.5
+    }
+   ],
+   "beds": 3
+  },
+  "photo_files": [
+   "img/domy/foto/133h6z_1.jpg"
+  ],
+  "pdf": "pdf/133h6z.pdf",
+  "reader": "ekord-133h6zpud",
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "133j94",
+  "title": "133j94",
+  "desc": "Dům Ekord 133j94 - až pro 5 osob - třígenerační",
+  "series": [
+   "4-1"
+  ],
+  "m2": 133,
+  "persons": "až pro 5 osob",
+  "notes": [
+   "třígenerační"
+  ],
+  "plan": {
+   "kind": "img",
+   "thumb": "img/domy/133j94_vykres.jpg",
+   "big": "img/domy/133j94_vykres.jpg",
+   "w": 673,
+   "h": 476
+  },
+  "photo_files": [
+   "img/domy/foto/133j94_1.jpg"
+  ],
+  "pdf": "pdf/133j94.pdf",
+  "reader": "133j94",
+  "why": [
+   "příček 1.1 m na 10 m²"
+  ],
+  "top2011": false
+ },
+ {
+  "slug": "135b35",
+  "title": "135b35",
+  "desc": "Dům Ekord 135b35 - až pro 5 osob",
+  "series": [
+   "4-1"
+  ],
+  "m2": 135,
+  "persons": "až pro 5 osob",
+  "notes": [],
+  "plan": {
+   "kind": "img",
+   "thumb": "img/domy/135b35_vykres.jpg",
+   "big": "img/domy/135b35_vykres.jpg",
+   "w": 800,
+   "h": 608
+  },
+  "photo_files": [
+   "img/domy/foto/135b35_1.jpg"
+  ],
+  "pdf": null,
+  "reader": null,
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "135h9y",
+  "title": "135h9Y",
+  "desc": "Dům Ekord mini 135h9Y - pro 4 osoby",
+  "series": [
+   "mini",
+   "jine"
+  ],
+  "m2": 135,
+  "persons": "pro 4 osoby",
+  "notes": [],
+  "plan": {
+   "kind": "svg",
+   "thumb": "img/domy/135h9y_nahled.svg",
+   "big": "img/domy/135h9y_pudorys.svg",
+   "roof": "img/domy/135h9y_strecha.svg",
+   "rooms": [
+    {
+     "name": "předsíň",
+     "area": 9.0
+    },
+    {
+     "name": "předsíň",
+     "area": 23.1
+    },
+    {
+     "name": "předsíň",
+     "area": 4.8
+    },
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 38.2
+    },
+    {
+     "name": "ložnice",
+     "area": 13.5
+    },
+    {
+     "name": "pokoj",
+     "area": 11.5
+    },
+    {
+     "name": "pokoj",
+     "area": 11.5
+    }
+   ],
+   "beds": 3
+  },
+  "photo_files": [
+   "img/domy/foto/135h9y_1.jpg",
+   "img/domy/foto/135h9y_2.jpg"
+  ],
+  "pdf": "pdf/135h9y.pdf",
+  "reader": "ekordminiflexi135h9ypud",
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "137g79z",
+  "title": "137g79z",
+  "desc": "Dům Ekord 137g79z - až pro 5 osob - třígenerační (jedna z variant Ekord 141gYX-flexi - patří i mezi \"zelené domy\")",
+  "series": [
+   "4-1",
+   "z"
+  ],
+  "m2": 137,
+  "persons": "až pro 5 osob",
+  "notes": [
+   "třígenerační (jedna z variant Ekord 141gYX-flexi",
+   "patří i mezi \"zelené domy\")"
+  ],
+  "plan": {
+   "kind": "svg",
+   "thumb": "img/domy/137g79z_nahled.svg",
+   "big": "img/domy/137g79z_pudorys.svg",
+   "roof": "img/domy/137g79z_strecha.svg",
+   "rooms": [
+    {
+     "name": "koupelna",
+     "area": 9.5
+    },
+    {
+     "name": "koupelna",
+     "area": 6.3
+    },
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 52.2
+    },
+    {
+     "name": "ložnice",
+     "area": 13.5
+    },
+    {
+     "name": "koupelna",
+     "area": 4.4
+    },
+    {
+     "name": "pokoj",
+     "area": 11.0
+    },
+    {
+     "name": "ložnice",
+     "area": 13.3
+    }
+   ],
+   "beds": 3
+  },
+  "photo_files": [
+   "img/domy/foto/137g79z_1.jpg",
+   "img/domy/foto/137g79z_2.jpg",
+   "img/domy/foto/137g79z_3.jpg",
+   "img/domy/foto/137g79z_4.jpg"
+  ],
+  "pdf": "pdf/137g79z.pdf",
+  "reader": "137g79z",
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "s139gzy",
+  "title": "S 139gZY",
+  "desc": "Dům Ekord S 139gZY",
+  "series": [
+   "s"
+  ],
+  "m2": 139,
+  "persons": null,
+  "notes": [],
+  "plan": {
+   "kind": "svg",
+   "thumb": "img/domy/s139gzy_nahled.svg",
+   "big": "img/domy/s139gzy_pudorys.svg",
+   "roof": "img/domy/s139gzy_strecha.svg",
+   "rooms": [
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 80.6
+    },
+    {
+     "name": "ložnice",
+     "area": 14.3
+    },
+    {
+     "name": "předsíň",
+     "area": 4.5
+    },
+    {
+     "name": "předsíň",
+     "area": 7.2
+    }
+   ],
+   "beds": 3
+  },
+  "photo_files": [
+   "img/domy/foto/s139gzy_1.jpg",
+   "img/domy/foto/s139gzy_2.jpg"
+  ],
+  "pdf": "pdf/s139gzy.pdf",
+  "reader": "s-139",
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "141gyx-flexi",
+  "title": "141gYX-flexi",
+  "desc": "Dům Ekord 141gYX-flexi - až pro 5 osob - třígenerační (\"flexi\" označuje výhodný mnohovariantní stavebnicový půdorys)",
+  "series": [
+   "4-1"
+  ],
+  "m2": 141,
+  "persons": "až pro 5 osob",
+  "notes": [
+   "třígenerační (\"flexi\" označuje výhodný mnohovariantní stavebnicový půdorys)"
+  ],
+  "plan": {
+   "kind": "svg",
+   "thumb": "img/domy/141gyx-flexi_nahled.svg",
+   "big": "img/domy/141gyx-flexi_pudorys.svg",
+   "roof": "img/domy/141gyx-flexi_strecha.svg",
+   "rooms": [
+    {
+     "name": "koupelna",
+     "area": 8.5
+    },
+    {
+     "name": "koupelna",
+     "area": 5.9
+    },
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 52.6
+    },
+    {
+     "name": "ložnice",
+     "area": 14.2
+    },
+    {
+     "name": "koupelna",
+     "area": 3.5
+    },
+    {
+     "name": "pokoj",
+     "area": 11.1
+    },
+    {
+     "name": "ložnice",
+     "area": 15.1
+    }
+   ],
+   "beds": 3
+  },
+  "photo_files": [
+   "img/domy/foto/141gyx-flexi_1.jpg",
+   "img/domy/foto/141gyx-flexi_2.jpg"
+  ],
+  "pdf": "pdf/141gyx-flexi.pdf",
+  "reader": "141gyx-flexi",
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "146g69z",
+  "title": "146g69z",
+  "desc": "Dům Ekord 146g69z - pro 5 osob - plochá střecha i stěny chráněny vrstvou zeminy a vegetací, možné jsou i běžné varianty stěn a střechy",
+  "series": [
+   "z"
+  ],
+  "m2": 146,
+  "persons": "pro 5 osob",
+  "notes": [
+   "plochá střecha i stěny chráněny vrstvou zeminy a vegetací, možné jsou i běžné varianty stěn a střechy"
+  ],
+  "plan": {
+   "kind": "img",
+   "thumb": "img/domy/146g69z_vykres.jpg",
+   "big": "img/domy/146g69z_vykres.jpg",
+   "w": 781,
+   "h": 562
+  },
+  "photo_files": [
+   "img/domy/foto/146g69z_1.jpg",
+   "img/domy/foto/146g69z_2.jpg"
+  ],
+  "pdf": null,
+  "reader": null,
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "150g9z",
+  "title": "150g9Z",
+  "desc": "Dům Ekord mini 150g9Z - pro 5 osob",
+  "series": [
+   "mini",
+   "jine"
+  ],
+  "m2": 150,
+  "persons": "pro 5 osob",
+  "notes": [],
+  "plan": {
+   "kind": "svg",
+   "thumb": "img/domy/150g9z_nahled.svg",
+   "big": "img/domy/150g9z_pudorys.svg",
+   "roof": "img/domy/150g9z_strecha.svg",
+   "rooms": [
+    {
+     "name": "koupelna",
+     "area": 6.9
+    },
+    {
+     "name": "obývací pokoj",
+     "area": 9.3
+    },
+    {
+     "name": "ložnice",
+     "area": 13.9
+    },
+    {
+     "name": "koupelna",
+     "area": 8.8
+    },
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 55.8
+    },
+    {
+     "name": "předsíň",
+     "area": 15.8
+    },
+    {
+     "name": "předsíň",
+     "area": 8.2
+    }
+   ],
+   "beds": 2
+  },
+  "photo_files": [
+   "img/domy/foto/150g9z_1.jpg",
+   "img/domy/foto/150g9z_2.jpg",
+   "img/domy/foto/150g9z_3.jpg",
+   "img/domy/foto/150g9z_4.jpg"
+  ],
+  "pdf": "pdf/150g9z.pdf",
+  "reader": "150g9ztxt",
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "s153gzy",
+  "title": "S 153gZY",
+  "desc": "Dům Ekord S 153gZY",
+  "series": [
+   "s"
+  ],
+  "m2": 153,
+  "persons": null,
+  "notes": [],
+  "plan": {
+   "kind": "svg",
+   "thumb": "img/domy/s153gzy_nahled.svg",
+   "big": "img/domy/s153gzy_pudorys.svg",
+   "roof": "img/domy/s153gzy_strecha.svg",
+   "rooms": [
+    {
+     "name": "ložnice",
+     "area": 15.6
+    },
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 91.7
+    },
+    {
+     "name": "předsíň",
+     "area": 5.8
+    },
+    {
+     "name": "předsíň",
+     "area": 6.7
+    }
+   ],
+   "beds": 4
+  },
+  "photo_files": [
+   "img/domy/foto/s153gzy_1.jpg"
+  ],
+  "pdf": "pdf/s153gzy.pdf",
+  "reader": "s153",
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "156a40",
+  "title": "156a40",
+  "desc": "Dům Ekord 156a40 - pro 4 osoby",
+  "series": [
+   "3-1"
+  ],
+  "m2": 156,
+  "persons": "pro 4 osoby",
+  "notes": [],
+  "plan": {
+   "kind": "svg",
+   "thumb": "img/domy/156a40_nahled.svg",
+   "big": "img/domy/156a40_pudorys.svg",
+   "roof": "img/domy/156a40_strecha.svg",
+   "rooms": [
+    {
+     "name": "technická místnost",
+     "area": 10.6
+    },
+    {
+     "name": "předsíň",
+     "area": 15.1
+    },
+    {
+     "name": "pokoj",
+     "area": 17.6
+    },
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 66.6
+    },
+    {
+     "name": "ložnice",
+     "area": 20.5
+    }
+   ],
+   "beds": 3
+  },
+  "photo_files": [
+   "img/domy/foto/156a40_1.jpg"
+  ],
+  "pdf": "pdf/156a40.pdf",
+  "reader": "156a40",
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "156i83",
+  "title": "156i83",
+  "desc": "Dům Ekord 156i83 - až pro 5 osob",
+  "series": [
+   "4-1"
+  ],
+  "m2": 156,
+  "persons": "až pro 5 osob",
+  "notes": [],
+  "plan": {
+   "kind": "img",
+   "thumb": "img/domy/156i83_vykres.jpg",
+   "big": "img/domy/156i83_vykres.jpg",
+   "w": 716,
+   "h": 576
+  },
+  "photo_files": [
+   "img/domy/foto/156i83_1.jpg",
+   "img/domy/foto/156i83_2.jpg"
+  ],
+  "pdf": null,
+  "reader": null,
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "160jy7",
+  "title": "160jY7",
+  "desc": "Dům Ekord 160jY7 - pro 6 osob - plochá střecha i stěny chráněny vrstvou zeminy a vegetací",
+  "series": [
+   "z"
+  ],
+  "m2": 160,
+  "persons": "pro 6 osob",
+  "notes": [
+   "plochá střecha i stěny chráněny vrstvou zeminy a vegetací"
+  ],
+  "plan": {
+   "kind": "img",
+   "thumb": "img/domy/160jy7_vykres.jpg",
+   "big": "img/domy/160jy7_vykres.jpg",
+   "w": 1600,
+   "h": 1125
+  },
+  "photo_files": [
+   "img/domy/foto/160jy7_1.jpg"
+  ],
+  "pdf": "pdf/160jy7.pdf",
+  "reader": "160jy7",
+  "why": [
+   "plocha mimo o 60 %"
+  ],
+  "top2011": false
+ },
+ {
+  "slug": "168j45",
+  "title": "168j45",
+  "desc": "Dům Ekord 168j45 - až pro 6 osob",
+  "series": [
+   "4-1"
+  ],
+  "m2": 168,
+  "persons": "až pro 6 osob",
+  "notes": [],
+  "plan": {
+   "kind": "svg",
+   "thumb": "img/domy/168j45_nahled.svg",
+   "big": "img/domy/168j45_pudorys.svg",
+   "roof": "img/domy/168j45_strecha.svg",
+   "rooms": [
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 103.6
+    },
+    {
+     "name": "ložnice",
+     "area": 13.6
+    },
+    {
+     "name": "pokoj",
+     "area": 14.0
+    },
+    {
+     "name": "ložnice",
+     "area": 14.8
+    }
+   ],
+   "beds": 3
+  },
+  "photo_files": [
+   "img/domy/foto/168j45_1.jpg",
+   "img/domy/foto/168j45_2.jpg"
+  ],
+  "pdf": "pdf/168j45.pdf",
+  "reader": "168j45",
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "170g78-flexi",
+  "title": "170g78-flexi",
+  "desc": "Dům Ekord 170g78-flexi - až pro 6 osob - třígenerační - možná omítková, cihlová i kamenná varianta - viz. příklady (\"flexi\" označuje výhodný mnohovariantní stavebnicový půdorys)",
+  "series": [
+   "4-1"
+  ],
+  "m2": 170,
+  "persons": "až pro 6 osob",
+  "notes": [
+   "třígenerační",
+   "možná omítková, cihlová i kamenná varianta",
+   "viz. příklady (\"flexi\" označuje výhodný mnohovariantní stavebnicový půdorys)"
+  ],
+  "plan": {
+   "kind": "svg",
+   "thumb": "img/domy/170g78-flexi_nahled.svg",
+   "big": "img/domy/170g78-flexi_pudorys.svg",
+   "roof": "img/domy/170g78-flexi_strecha.svg",
+   "rooms": [
+    {
+     "name": "koupelna",
+     "area": 6.6
+    },
+    {
+     "name": "koupelna",
+     "area": 8.1
+    },
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 74.3
+    },
+    {
+     "name": "šatna",
+     "area": 4.6
+    },
+    {
+     "name": "pokoj",
+     "area": 15.6
+    },
+    {
+     "name": "koupelna",
+     "area": 3.9
+    },
+    {
+     "name": "pokoj",
+     "area": 16.9
+    },
+    {
+     "name": "ložnice",
+     "area": 15.6
+    }
+   ],
+   "beds": 3
+  },
+  "photo_files": [
+   "img/domy/foto/170g78-flexi_1.jpg",
+   "img/domy/foto/170g78-flexi_2.jpg",
+   "img/domy/foto/170g78-flexi_3.jpg",
+   "img/domy/foto/170g78-flexi_4.jpg"
+  ],
+  "pdf": "pdf/170g78-flexi.pdf",
+  "reader": "170g78-flexi",
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "174c92a",
+  "title": "174c92a",
+  "desc": "Dům Ekord 174c92a - až pro 6 osob",
+  "series": [
+   "jine"
+  ],
+  "m2": 174,
+  "persons": "až pro 6 osob",
+  "notes": [],
+  "plan": {
+   "kind": "img",
+   "thumb": "img/domy/174c92a_vykres.jpg",
+   "big": "img/domy/174c92a_vykres.jpg",
+   "w": 800,
+   "h": 623
+  },
+  "photo_files": [
+   "img/domy/foto/174c92a_1.jpg"
+  ],
+  "pdf": null,
+  "reader": null,
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "174g54",
+  "title": "174g54",
+  "desc": "Dům Ekord 174g54 - až pro 6 osob - třígenerační",
+  "series": [
+   "4-1"
+  ],
+  "m2": 174,
+  "persons": "až pro 6 osob",
+  "notes": [
+   "třígenerační"
+  ],
+  "plan": {
+   "kind": "svg",
+   "thumb": "img/domy/174g54_nahled.svg",
+   "big": "img/domy/174g54_pudorys.svg",
+   "roof": "img/domy/174g54_strecha.svg",
+   "rooms": [
+    {
+     "name": "koupelna",
+     "area": 6.3
+    },
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 83.6
+    },
+    {
+     "name": "šatna",
+     "area": 3.8
+    },
+    {
+     "name": "ložnice",
+     "area": 14.9
+    },
+    {
+     "name": "koupelna",
+     "area": 2.8
+    },
+    {
+     "name": "pokoj",
+     "area": 16.0
+    },
+    {
+     "name": "obývací pokoj",
+     "area": 14.2
+    }
+   ],
+   "beds": 2
+  },
+  "photo_files": [
+   "img/domy/foto/174g54_1.jpg",
+   "img/domy/foto/174g54_2.jpg",
+   "img/domy/foto/174g54_3.jpg",
+   "img/domy/foto/174g54_4.jpg"
+  ],
+  "pdf": "pdf/174g54.pdf",
+  "reader": "174g54",
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "177g45",
+  "title": "177g45",
+  "desc": "Dům Ekord 177g45 - až pro 6 osob - třígenerační",
+  "series": [
+   "4-1"
+  ],
+  "m2": 177,
+  "persons": "až pro 6 osob",
+  "notes": [
+   "třígenerační"
+  ],
+  "plan": {
+   "kind": "img",
+   "thumb": "img/domy/177g45_vykres.jpg",
+   "big": "img/domy/177g45_vykres.jpg",
+   "w": 800,
+   "h": 514
+  },
+  "photo_files": [
+   "img/domy/foto/177g45_1.jpg",
+   "img/domy/foto/177g45_2.jpg"
+  ],
+  "pdf": null,
+  "reader": null,
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "180ax1",
+  "title": "180aX1",
+  "desc": "Dům Ekord 180aX1 - pro 4 osoby",
+  "series": [
+   "3-1"
+  ],
+  "m2": 180,
+  "persons": "pro 4 osoby",
+  "notes": [],
+  "plan": {
+   "kind": "svg",
+   "thumb": "img/domy/180ax1_nahled.svg",
+   "big": "img/domy/180ax1_pudorys.svg",
+   "roof": "img/domy/180ax1_strecha.svg",
+   "rooms": [
+    {
+     "name": "WC",
+     "area": 3.2
+    },
+    {
+     "name": "předsíň",
+     "area": 8.0
+    },
+    {
+     "name": "předsíň",
+     "area": 7.3
+    },
+    {
+     "name": "předsíň",
+     "area": 10.5
+    },
+    {
+     "name": "předsíň",
+     "area": 9.0
+    },
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 59.9
+    },
+    {
+     "name": "koupelna",
+     "area": 9.7
+    },
+    {
+     "name": "koupelna",
+     "area": 7.0
+    },
+    {
+     "name": "ložnice",
+     "area": 19.0
+    },
+    {
+     "name": "ložnice",
+     "area": 14.5
+    }
+   ],
+   "beds": 2
+  },
+  "photo_files": [
+   "img/domy/foto/180ax1_1.jpg"
+  ],
+  "pdf": "pdf/180ax1.pdf",
+  "reader": "180ax1",
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "182j47",
+  "title": "182j47",
+  "desc": "Dům Ekord 182j47-TOPdům2011 - až pro 6 osob - třígenerační",
+  "series": [
+   "4-1"
+  ],
+  "m2": 182,
+  "persons": "až pro 6 osob",
+  "notes": [
+   "třígenerační"
+  ],
+  "plan": {
+   "kind": "svg",
+   "thumb": "img/domy/182j47_nahled.svg",
+   "big": "img/domy/182j47_pudorys.svg",
+   "roof": "img/domy/182j47_strecha.svg",
+   "rooms": [
+    {
+     "name": "WC",
+     "area": 1.2
+    },
+    {
+     "name": "šatna",
+     "area": 4.1
+    },
+    {
+     "name": "předsíň",
+     "area": 7.7
+    },
+    {
+     "name": "technická místnost",
+     "area": 7.5
+    },
+    {
+     "name": "koupelna",
+     "area": 5.1
+    },
+    {
+     "name": "šatna",
+     "area": 6.2
+    },
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 52.5
+    },
+    {
+     "name": "koupelna",
+     "area": 6.3
+    },
+    {
+     "name": "pokoj",
+     "area": 14.7
+    },
+    {
+     "name": "pokoj",
+     "area": 16.6
+    },
+    {
+     "name": "ložnice",
+     "area": 17.0
+    }
+   ],
+   "beds": 3
+  },
+  "photo_files": [
+   "img/domy/foto/182j47_1.jpg",
+   "img/domy/foto/182j47_2.jpg",
+   "img/domy/foto/182j47_3.jpg"
+  ],
+  "pdf": "pdf/182j47.pdf",
+  "reader": "182j47-prizemi",
+  "why": [],
+  "top2011": true
+ },
+ {
+  "slug": "184jz3",
+  "title": "184jZ3",
+  "desc": "Dům Ekord 184jZ3 - až pro 6 osob - třígenerační",
+  "series": [
+   "4-1"
+  ],
+  "m2": 184,
+  "persons": "až pro 6 osob",
+  "notes": [
+   "třígenerační"
+  ],
+  "plan": {
+   "kind": "svg",
+   "thumb": "img/domy/184jz3_nahled.svg",
+   "big": "img/domy/184jz3_pudorys.svg",
+   "roof": "img/domy/184jz3_strecha.svg",
+   "rooms": [
+    {
+     "name": "koupelna",
+     "area": 6.7
+    },
+    {
+     "name": "koupelna",
+     "area": 8.5
+    },
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 80.4
+    },
+    {
+     "name": "ložnice",
+     "area": 17.3
+    },
+    {
+     "name": "koupelna",
+     "area": 8.5
+    },
+    {
+     "name": "pokoj",
+     "area": 16.8
+    },
+    {
+     "name": "ložnice",
+     "area": 16.2
+    }
+   ],
+   "beds": 3
+  },
+  "photo_files": [
+   "img/domy/foto/184jz3_1.jpg"
+  ],
+  "pdf": "pdf/184jz3.pdf",
+  "reader": "184jz3",
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "s186gzy",
+  "title": "S 186gZY",
+  "desc": "Dům Ekord S 186gZY",
+  "series": [
+   "s"
+  ],
+  "m2": 186,
+  "persons": null,
+  "notes": [],
+  "plan": {
+   "kind": "svg",
+   "thumb": "img/domy/s186gzy_nahled.svg",
+   "big": "img/domy/s186gzy_pudorys.svg",
+   "roof": "img/domy/s186gzy_strecha.svg",
+   "rooms": [
+    {
+     "name": "předsíň",
+     "area": 5.6
+    },
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 108.7
+    },
+    {
+     "name": "ložnice",
+     "area": 16.5
+    },
+    {
+     "name": "předsíň",
+     "area": 6.7
+    }
+   ],
+   "beds": 4
+  },
+  "photo_files": [
+   "img/domy/foto/s186gzy_1.jpg"
+  ],
+  "pdf": "pdf/s186gzy.pdf",
+  "reader": "s186",
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "bl187gxy",
+  "title": "B L187gXY",
+  "desc": "Dům Ekord B 187gXY",
+  "series": [
+   "b"
+  ],
+  "m2": 187,
+  "persons": null,
+  "notes": [],
+  "plan": {
+   "kind": "svg",
+   "thumb": "img/domy/bl187gxy_nahled.svg",
+   "big": "img/domy/bl187gxy_pudorys.svg",
+   "roof": "img/domy/bl187gxy_strecha.svg",
+   "rooms": [
+    {
+     "name": "WC",
+     "area": 3.9
+    },
+    {
+     "name": "předsíň",
+     "area": 22.1
+    },
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 75.7
+    },
+    {
+     "name": "WC",
+     "area": 3.9
+    },
+    {
+     "name": "technická místnost",
+     "area": 4.0
+    },
+    {
+     "name": "předsíň",
+     "area": 8.3
+    },
+    {
+     "name": "pokoj",
+     "area": 14.3
+    },
+    {
+     "name": "pokoj",
+     "area": 14.3
+    }
+   ],
+   "beds": 3
+  },
+  "photo_files": [
+   "img/domy/foto/bl187gxy_1.jpg",
+   "img/domy/foto/bl187gxy_2.jpg"
+  ],
+  "pdf": "pdf/bl187gxy.pdf",
+  "reader": "bl187gxypud",
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "190gx4",
+  "title": "190gX4",
+  "desc": "Dům Ekord 190gX4 - až pro 6 osob",
+  "series": [
+   "jine"
+  ],
+  "m2": 190,
+  "persons": "až pro 6 osob",
+  "notes": [],
+  "plan": {
+   "kind": "img",
+   "thumb": "img/domy/190gx4_vykres.jpg",
+   "big": "img/domy/190gx4_vykres.jpg",
+   "w": 760,
+   "h": 581
+  },
+  "photo_files": [
+   "img/domy/foto/190gx4_1.jpg",
+   "img/domy/foto/190gx4_2.jpg",
+   "img/domy/foto/190gx4_3.jpg"
+  ],
+  "pdf": null,
+  "reader": null,
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "190h314",
+  "title": "190h314",
+  "desc": "Dům Ekord 190h314 - až pro 6 osob",
+  "series": [
+   "4-1"
+  ],
+  "m2": 190,
+  "persons": "až pro 6 osob",
+  "notes": [],
+  "plan": {
+   "kind": "svg",
+   "thumb": "img/domy/190h314_nahled.svg",
+   "big": "img/domy/190h314_pudorys.svg",
+   "roof": "img/domy/190h314_strecha.svg",
+   "rooms": [
+    {
+     "name": "koupelna",
+     "area": 7.9
+    },
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 96.2
+    },
+    {
+     "name": "koupelna",
+     "area": 6.9
+    },
+    {
+     "name": "pokoj",
+     "area": 15.6
+    },
+    {
+     "name": "pokoj",
+     "area": 16.8
+    },
+    {
+     "name": "ložnice",
+     "area": 16.8
+    }
+   ],
+   "beds": 3
+  },
+  "photo_files": [
+   "img/domy/foto/190h314_1.jpg",
+   "img/domy/foto/190h314_2.jpg"
+  ],
+  "pdf": "pdf/190h314.pdf",
+  "reader": "190h314pud",
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "195a29",
+  "title": "195a29",
+  "desc": "Dům Ekord 195a29 - až pro 6 osob- s garáží",
+  "series": [
+   "4-1"
+  ],
+  "m2": 195,
+  "persons": "až pro 6 osob",
+  "notes": [],
+  "plan": {
+   "kind": "svg",
+   "thumb": "img/domy/195a29_nahled.svg",
+   "big": "img/domy/195a29_pudorys.svg",
+   "roof": "img/domy/195a29_strecha.svg",
+   "rooms": [
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 56.8
+    },
+    {
+     "name": "pokoj",
+     "area": 12.7
+    },
+    {
+     "name": "ložnice",
+     "area": 15.6
+    },
+    {
+     "name": "pokoj",
+     "area": 14.7
+    }
+   ],
+   "beds": 4
+  },
+  "photo_files": [
+   "img/domy/foto/195a29_1.jpg",
+   "img/domy/foto/195a29_2.jpg"
+  ],
+  "pdf": "pdf/195a29.pdf",
+  "reader": "195a29",
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "195a60",
+  "title": "195a60",
+  "desc": "Dům Ekord 195a60 - až pro 7 osob - třígenerační Oproti domu Ekord195a29 v skupině 4+1 je místo garáže pokoj s vlastním vstupem a koupelnou",
+  "series": [
+   "5-1"
+  ],
+  "m2": 195,
+  "persons": "až pro 7 osob",
+  "notes": [
+   "třígenerační Oproti domu Ekord195a29 v skupině 4+1 je místo garáže pokoj s vlastním vstupem a koupelnou"
+  ],
+  "plan": {
+   "kind": "img",
+   "thumb": "img/domy/195a60_vykres.jpg",
+   "big": "img/domy/195a60_vykres.jpg",
+   "w": 800,
+   "h": 555
+  },
+  "photo_files": [
+   "img/domy/foto/195a60_1.jpg"
+  ],
+  "pdf": null,
+  "reader": null,
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "200g78-flexi",
+  "title": "200g78-flexi",
+  "desc": "Dům Ekord 200g78-flexi - až pro 8 (po zvětšení i více) osob - třígenerační - jako u všech variant domů Ekord je možná omítková, cihlová i kamenná varianta - viz. příklad omítkové varianty (\"flexi\" označuje výhodný mnohovariantní stavebnicový půdorys)",
+  "series": [
+   "5-1"
+  ],
+  "m2": 200,
+  "persons": null,
+  "notes": [
+   "třígenerační",
+   "jako u všech variant domů Ekord je možná omítková, cihlová i kamenná varianta",
+   "viz. příklad omítkové varianty (\"flexi\" označuje výhodný mnohovariantní stavebnicový půdorys)"
+  ],
+  "plan": {
+   "kind": "svg",
+   "thumb": "img/domy/200g78-flexi_nahled.svg",
+   "big": "img/domy/200g78-flexi_pudorys.svg",
+   "roof": "img/domy/200g78-flexi_strecha.svg",
+   "rooms": [
+    {
+     "name": "koupelna",
+     "area": 6.7
+    },
+    {
+     "name": "koupelna",
+     "area": 8.1
+    },
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 82.8
+    },
+    {
+     "name": "předsíň",
+     "area": 8.8
+    },
+    {
+     "name": "pokoj",
+     "area": 15.5
+    },
+    {
+     "name": "pokoj",
+     "area": 16.8
+    },
+    {
+     "name": "obývací pokoj",
+     "area": 11.3
+    },
+    {
+     "name": "koupelna",
+     "area": 5.0
+    },
+    {
+     "name": "ložnice",
+     "area": 16.7
+    }
+   ],
+   "beds": 3
+  },
+  "photo_files": [
+   "img/domy/foto/200g78-flexi_1.jpg",
+   "img/domy/foto/200g78-flexi_2.jpg"
+  ],
+  "pdf": "pdf/200g78-flexi.pdf",
+  "reader": "200g78flexi",
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "200t55",
+  "title": "200t55",
+  "desc": "Dům Ekord 200t55 - až pro 7 osob - třígenerační (varianta stavebnicovho půdorysu EKORD 200g78-flexi)",
+  "series": [
+   "5-1"
+  ],
+  "m2": 200,
+  "persons": "až pro 7 osob",
+  "notes": [
+   "třígenerační (varianta stavebnicovho půdorysu EKORD 200g78-flexi)"
+  ],
+  "plan": {
+   "kind": "img",
+   "thumb": "img/domy/200t55_vykres.jpg",
+   "big": "img/domy/200t55_vykres.jpg",
+   "w": 800,
+   "h": 576
+  },
+  "photo_files": [
+   "img/domy/foto/200t55_1.jpg",
+   "img/domy/foto/200t55_2.jpg"
+  ],
+  "pdf": null,
+  "reader": null,
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "201a72",
+  "title": "201a72",
+  "desc": "Dům Ekord 201a72 - až pro 7 osob - třígenerační",
+  "series": [
+   "5-1"
+  ],
+  "m2": 201,
+  "persons": "až pro 7 osob",
+  "notes": [
+   "třígenerační"
+  ],
+  "plan": {
+   "kind": "img",
+   "thumb": "img/domy/201a72_vykres.jpg",
+   "big": "img/domy/201a72_vykres.jpg",
+   "w": 800,
+   "h": 576
+  },
+  "photo_files": [
+   "img/domy/foto/201a72_1.jpg"
+  ],
+  "pdf": "pdf/201a72.pdf",
+  "reader": "201a72",
+  "why": [
+   "zdi 0.03 plochy"
+  ],
+  "top2011": false
+ },
+ {
+  "slug": "211a14",
+  "title": "211a14",
+  "desc": "Dům Ekord 211a14 - až pro 6 osob - s garáží",
+  "series": [
+   "5-1"
+  ],
+  "m2": 211,
+  "persons": "až pro 6 osob",
+  "notes": [
+   "s garáží"
+  ],
+  "plan": {
+   "kind": "img",
+   "thumb": "img/domy/211a14_vykres.jpg",
+   "big": "img/domy/211a14_vykres.jpg",
+   "w": 800,
+   "h": 464
+  },
+  "photo_files": [
+   "img/domy/foto/211a14_1.jpg"
+  ],
+  "pdf": null,
+  "reader": null,
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "s211gzy",
+  "title": "S 211gZY",
+  "desc": "Dům Ekord S 211gZY",
+  "series": [
+   "s"
+  ],
+  "m2": 211,
+  "persons": null,
+  "notes": [],
+  "plan": null,
+  "photo_files": [
+   "img/domy/foto/s211gzy_1.jpg",
+   "img/domy/foto/s211gzy_2.jpg"
+  ],
+  "pdf": null,
+  "reader": null,
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "215a51",
+  "title": "215a51",
+  "desc": "Dům Ekord 215a51 - až pro 7 osob - třígenerační",
+  "series": [
+   "5-1"
+  ],
+  "m2": 215,
+  "persons": "až pro 7 osob",
+  "notes": [
+   "třígenerační"
+  ],
+  "plan": {
+   "kind": "img",
+   "thumb": "img/domy/215a51_vykres.jpg",
+   "big": "img/domy/215a51_vykres.jpg",
+   "w": 800,
+   "h": 554
+  },
+  "photo_files": [
+   "img/domy/foto/215a51_1.jpg"
+  ],
+  "pdf": null,
+  "reader": null,
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "232j67",
+  "title": "232j67",
+  "desc": "Dům Ekord 232j67 - až pro 7 osob - s garáží - třígenerační",
+  "series": [
+   "5-1"
+  ],
+  "m2": 232,
+  "persons": "až pro 7 osob",
+  "notes": [
+   "s garáží",
+   "třígenerační"
+  ],
+  "plan": {
+   "kind": "svg",
+   "thumb": "img/domy/232j67_nahled.svg",
+   "big": "img/domy/232j67_pudorys.svg",
+   "roof": "img/domy/232j67_strecha.svg",
+   "rooms": [
+    {
+     "name": "koupelna",
+     "area": 9.4
+    },
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 120.3
+    },
+    {
+     "name": "koupelna",
+     "area": 4.9
+    },
+    {
+     "name": "pracovna",
+     "area": 9.6
+    },
+    {
+     "name": "ložnice",
+     "area": 14.5
+    },
+    {
+     "name": "předsíň",
+     "area": 26.1
+    }
+   ],
+   "beds": 4
+  },
+  "photo_files": [
+   "img/domy/foto/232j67_1.jpg",
+   "img/domy/foto/232j67_2.jpg"
+  ],
+  "pdf": "pdf/232j67.pdf",
+  "reader": "232j67-pudorys",
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "235ax0",
+  "title": "235aX0",
+  "desc": "Dům Ekord 235aX0 - pro 4 osoby",
+  "series": [
+   "3-1"
+  ],
+  "m2": 235,
+  "persons": "pro 4 osoby",
+  "notes": [],
+  "plan": {
+   "kind": "svg",
+   "thumb": "img/domy/235ax0_nahled.svg",
+   "big": "img/domy/235ax0_pudorys.svg",
+   "roof": "img/domy/235ax0_strecha.svg",
+   "rooms": [
+    {
+     "name": "předsíň",
+     "area": 9.3
+    },
+    {
+     "name": "předsíň",
+     "area": 12.8
+    },
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 131.8
+    },
+    {
+     "name": "předsíň",
+     "area": 13.0
+    },
+    {
+     "name": "koupelna",
+     "area": 10.4
+    },
+    {
+     "name": "ložnice",
+     "area": 19.0
+    }
+   ],
+   "beds": 2
+  },
+  "photo_files": [
+   "img/domy/foto/235ax0_1.jpg"
+  ],
+  "pdf": "pdf/235ax0.pdf",
+  "reader": "235ax0-pudorys",
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "243j85",
+  "title": "243j85",
+  "desc": "Dům Ekord 243j85 - až pro 5 osob",
+  "series": [
+   "jine"
+  ],
+  "m2": 243,
+  "persons": "až pro 5 osob",
+  "notes": [],
+  "plan": {
+   "kind": "img",
+   "thumb": "img/domy/243j85_vykres.jpg",
+   "big": "img/domy/243j85_vykres.jpg",
+   "w": 788,
+   "h": 574
+  },
+  "photo_files": [
+   "img/domy/foto/243j85_1.jpg"
+  ],
+  "pdf": null,
+  "reader": null,
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "267a50",
+  "title": "267a50",
+  "desc": "Dům Ekord 267a50 - pro 6 osob - plochá střecha i stěny chráněny vrstvou zeminy a vegetací",
+  "series": [
+   "z"
+  ],
+  "m2": 267,
+  "persons": "pro 6 osob",
+  "notes": [
+   "plochá střecha i stěny chráněny vrstvou zeminy a vegetací"
+  ],
+  "plan": {
+   "kind": "img",
+   "thumb": "img/domy/267a50_vykres.jpg",
+   "big": "img/domy/267a50_vykres.jpg",
+   "w": 800,
+   "h": 700
+  },
+  "photo_files": [
+   "img/domy/foto/267a50_1.jpg",
+   "img/domy/foto/267a50_2.jpg",
+   "img/domy/foto/267a50_3.jpg"
+  ],
+  "pdf": null,
+  "reader": null,
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "277hxz",
+  "title": "277hXZ",
+  "desc": "Dům Ekord 277hXZ - až pro 7 osob",
+  "series": [
+   "jine"
+  ],
+  "m2": 277,
+  "persons": "až pro 7 osob",
+  "notes": [],
+  "plan": {
+   "kind": "svg",
+   "thumb": "img/domy/277hxz_nahled.svg",
+   "big": "img/domy/277hxz_pudorys.svg",
+   "roof": "img/domy/277hxz_strecha.svg",
+   "rooms": [
+    {
+     "name": "koupelna",
+     "area": 5.9
+    },
+    {
+     "name": "obývací pokoj",
+     "area": 12.3
+    },
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 99.6
+    },
+    {
+     "name": "předsíň",
+     "area": 7.6
+    },
+    {
+     "name": "pokoj",
+     "area": 20.1
+    },
+    {
+     "name": "předsíň",
+     "area": 9.1
+    },
+    {
+     "name": "obývací pokoj",
+     "area": 11.9
+    },
+    {
+     "name": "pokoj",
+     "area": 19.6
+    }
+   ],
+   "beds": 6
+  },
+  "photo_files": [
+   "img/domy/foto/277hxz_1.jpg",
+   "img/domy/foto/277hxz_2.jpg",
+   "img/domy/foto/277hxz_3.jpg"
+  ],
+  "pdf": "pdf/277hxz.pdf",
+  "reader": "277hxzktlgtxt",
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "286j46-187",
+  "title": "286j46-187",
+  "desc": "Dům Ekord 286j46-187 - až pro 6 osob - třígenerační",
+  "series": [
+   "5-1"
+  ],
+  "m2": 286,
+  "persons": "až pro 6 osob",
+  "notes": [
+   "třígenerační"
+  ],
+  "plan": {
+   "kind": "svg",
+   "thumb": "img/domy/286j46-187_nahled.svg",
+   "big": "img/domy/286j46-187_pudorys.svg",
+   "roof": "img/domy/286j46-187_strecha.svg",
+   "rooms": [
+    {
+     "name": "koupelna",
+     "area": 8.1
+    },
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 125.2
+    },
+    {
+     "name": "koupelna",
+     "area": 9.3
+    },
+    {
+     "name": "předsíň",
+     "area": 26.5
+    },
+    {
+     "name": "ložnice",
+     "area": 13.4
+    },
+    {
+     "name": "pokoj",
+     "area": 14.3
+    },
+    {
+     "name": "obývací pokoj",
+     "area": 26.8
+    },
+    {
+     "name": "ložnice",
+     "area": 18.2
+    }
+   ],
+   "beds": 3
+  },
+  "photo_files": [
+   "img/domy/foto/286j46-187_1.jpg"
+  ],
+  "pdf": "pdf/286j46-187.pdf",
+  "reader": "286j46-187",
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "296j56-185",
+  "title": "296j56-185",
+  "desc": "Dům Ekord 296j56-185 - s garáží - třígenerační",
+  "series": [
+   "5-1"
+  ],
+  "m2": 296,
+  "persons": null,
+  "notes": [
+   "s garáží",
+   "třígenerační"
+  ],
+  "plan": {
+   "kind": "svg",
+   "thumb": "img/domy/296j56-185_nahled.svg",
+   "big": "img/domy/296j56-185_pudorys.svg",
+   "roof": "img/domy/296j56-185_strecha.svg",
+   "rooms": [
+    {
+     "name": "koupelna",
+     "area": 8.3
+    },
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 125.3
+    },
+    {
+     "name": "předsíň",
+     "area": 14.0
+    },
+    {
+     "name": "předsíň",
+     "area": 26.7
+    },
+    {
+     "name": "ložnice",
+     "area": 17.6
+    },
+    {
+     "name": "pokoj",
+     "area": 14.3
+    },
+    {
+     "name": "ložnice",
+     "area": 18.2
+    }
+   ],
+   "beds": 3
+  },
+  "photo_files": [
+   "img/domy/foto/296j56-185_1.jpg",
+   "img/domy/foto/296j56-185_2.jpg"
+  ],
+  "pdf": "pdf/296j56-185.pdf",
+  "reader": "296j56-185",
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "319j46-200",
+  "title": "319j46-200",
+  "desc": "Dům Ekord 319j46-200 - s garáží - třígenerační",
+  "series": [
+   "5-1"
+  ],
+  "m2": 319,
+  "persons": null,
+  "notes": [
+   "s garáží",
+   "třígenerační"
+  ],
+  "plan": {
+   "kind": "svg",
+   "thumb": "img/domy/319j46-200_nahled.svg",
+   "big": "img/domy/319j46-200_pudorys.svg",
+   "roof": "img/domy/319j46-200_strecha.svg",
+   "rooms": [
+    {
+     "name": "koupelna",
+     "area": 8.3
+    },
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 108.5
+    },
+    {
+     "name": "předsíň",
+     "area": 12.5
+    },
+    {
+     "name": "koupelna",
+     "area": 11.2
+    },
+    {
+     "name": "pokoj",
+     "area": 12.3
+    },
+    {
+     "name": "ložnice",
+     "area": 14.8
+    },
+    {
+     "name": "předsíň",
+     "area": 14.1
+    },
+    {
+     "name": "pokoj",
+     "area": 14.0
+    },
+    {
+     "name": "předsíň",
+     "area": 53.7
+    },
+    {
+     "name": "ložnice",
+     "area": 18.2
+    }
+   ],
+   "beds": 4
+  },
+  "photo_files": [
+   "img/domy/foto/319j46-200_1.jpg"
+  ],
+  "pdf": "pdf/319j46-200.pdf",
+  "reader": "319j46-200",
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "330a62",
+  "title": "330a62",
+  "desc": "Dům Ekord 330a62 - s garáží - třígenerační",
+  "series": [
+   "6-1"
+  ],
+  "m2": 330,
+  "persons": null,
+  "notes": [
+   "s garáží",
+   "třígenerační"
+  ],
+  "plan": {
+   "kind": "img",
+   "thumb": "img/domy/330a62_vykres.jpg",
+   "big": "img/domy/330a62_vykres.jpg",
+   "w": 800,
+   "h": 454
+  },
+  "photo_files": [
+   "img/domy/foto/330a62_1.jpg"
+  ],
+  "pdf": null,
+  "reader": null,
+  "why": [],
+  "top2011": false
+ },
+ {
+  "slug": "331az6",
+  "title": "331aZ6",
+  "desc": "Dům Ekord 331aZ6 - až pro 9 osob",
+  "series": [
+   "jine"
+  ],
+  "m2": 331,
+  "persons": "až pro 9 osob",
+  "notes": [],
+  "plan": {
+   "kind": "img",
+   "thumb": "img/domy/331az6_vykres.jpg",
+   "big": "img/domy/331az6_vykres.jpg",
+   "w": 800,
+   "h": 688
+  },
+  "photo_files": [
+   "img/domy/foto/331az6_1.jpg"
+  ],
+  "pdf": null,
+  "reader": null,
+  "why": [],
+  "top2011": false
+ }
+]
