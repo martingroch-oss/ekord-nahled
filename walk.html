@@ -38,7 +38,7 @@ canvas{display:block;width:100%;height:100%;touch-action:none}
   <button id="go">Začít</button>
 </div>
 <div class="ui" id="ui"></div>
-<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.165.0/examples/jsm/"}}</script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.165.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.165.0/examples/jsm/","three-mesh-bvh":"https://cdn.jsdelivr.net/npm/three-mesh-bvh@0.7.6/build/index.module.js"}}</script>
 <script type="module">
 import * as THREE from 'three';
 import {GLTFLoader} from 'three/addons/loaders/GLTFLoader.js';
@@ -50,6 +50,9 @@ import {GTAOPass} from 'three/addons/postprocessing/GTAOPass.js';
 import {OutputPass} from 'three/addons/postprocessing/OutputPass.js';
 import {RectAreaLightUniformsLib} from 'three/addons/lights/RectAreaLightUniformsLib.js';
 import {Reflector} from 'three/addons/objects/Reflector.js';
+// walking casts rays every frame against a model of over a million triangles: a BVH per mesh makes them instant
+import {computeBoundsTree,acceleratedRaycast} from 'three-mesh-bvh';
+THREE.BufferGeometry.prototype.computeBoundsTree=computeBoundsTree;THREE.Mesh.prototype.raycast=acceleratedRaycast;
 RectAreaLightUniformsLib.init();
 
 const EYE=1.6, R=0.3, SPEED=1.5;
@@ -115,7 +118,7 @@ function prep(root,collide){root.traverse(o=>{if(!o.isMesh)return;
   if(o.material&&o.material.name==='web_grass')o.material.color.setRGB(0.5,0.92,0.42);
   if(/^mirror_\d/.test(o.name)||/^mirror_\d/.test(o.parent&&o.parent.name||'')){mirror(o);return}
   if(/led/.test(n)||!collide)return;
-  solid.push(o)})}
+  o.geometry.computeBoundsTree();solid.push(o)})}
 
 Promise.all([load(src),cfg,sky,load(base+'_okoli.glb').catch(()=>null)]).then(([g,c,hdr,env])=>{
   if(c&&c.spots&&c.spots.length){SPOTS=c.spots;HIDE=c.hide||HIDE}
@@ -150,7 +153,7 @@ function blocked(dir,dist){for(const y of [0.45,1.1]){ray.set(new THREE.Vector3(
   const q=cam.position.clone().addScaledVector(dir,dist+R);ray.set(new THREE.Vector3(q.x,cam.position.y-EYE+1.7,q.z),down);ray.far=2.2;
   return !ray.intersectObjects(solid,false).length}
 // indoors the sky lights the room through the windows only: less sky light under a ceiling (smoothly)
-let inside=1;function indoor(){ray.set(cam.position,up);ray.far=6;return ray.intersectObjects(solid,false).length?1:0}
+let inside=1,inIn=1,fk2=0;const firstHit=true;function indoor(){ray.set(cam.position,up);ray.far=6;return (ray.firstHitOnly=true,ray.intersectObjects(solid,false).length)?1:0}
 
 const keys={};addEventListener('keydown',e=>{keys[e.code]=true});addEventListener('keyup',e=>{keys[e.code]=false});
 const cv=renderer.domElement;
@@ -167,10 +170,10 @@ cv.addEventListener('pointermove',e=>{if(look&&e.pointerId===look.id){yaw+=(e.cl
 const end=e=>{if(look&&e.pointerId===look.id)look=null;if(move&&e.pointerId===move.id){move=null;mv={x:0,y:0};knob.style.transform=''}};
 cv.addEventListener('pointerup',end);cv.addEventListener('pointercancel',end);
 
-const clock=new THREE.Clock();let ft=0,fn=0,fk=0;
+const clock=new THREE.Clock();let ft=0,fn=0,fk=0,tl=performance.now();
 renderer.setAnimationLoop(()=>{const dt=Math.min(0.05,clock.getDelta());
   // automatic quality: after the first 90 frames, a slow machine (> 45 ms a frame) drops AO and shadows
-  if(HQ&&fk<1&&solid.length){ft+=dt;fn++;if(fn===90){fk=1;if(ft/fn>0.045&&Q.get('q')!=='1'){HQ=false;setQ()}}}
+  {const n_=performance.now();if(HQ&&fk<1&&solid.length){fn++;if(fn>20)ft+=n_-tl;if(fn===90){fk=1;if(ft/70>45&&Q.get('q')!=='1'){HQ=false;setQ()}}}tl=n_}
   let f=(keys.KeyW||keys.ArrowUp?1:0)-(keys.KeyS||keys.ArrowDown?1:0)-mv.y,s=(keys.KeyD?1:0)-(keys.KeyA?1:0)+mv.x;
   if(!touch){if(keys.ArrowLeft)yaw+=1.6*dt;if(keys.ArrowRight)yaw-=1.6*dt}
   cam.rotation.set(pitch,yaw,0);
@@ -178,7 +181,7 @@ renderer.setAnimationLoop(()=>{const dt=Math.min(0.05,clock.getDelta());
     const d=fw.multiplyScalar(f).add(rt.multiplyScalar(s));const l=Math.min(1,d.length());d.normalize();const step=SPEED*l*dt*(keys.ShiftLeft?2:1);
     if(!blocked(d,step)){cam.position.addScaledVector(d,step);snap()}
     else{for(const ax of [new THREE.Vector3(Math.sign(d.x),0,0),new THREE.Vector3(0,0,Math.sign(d.z))]){if(ax.lengthSq()&&!blocked(ax,step*Math.abs(ax.x?d.x:d.z))){cam.position.addScaledVector(ax,step*Math.abs(ax.x?d.x:d.z));snap();break}}}}
-  if(solid.length){inside+=(indoor()-inside)*Math.min(1,dt*3);
+  if(solid.length){if((++fk2)%6===0)inIn=indoor();inside+=(inIn-inside)*Math.min(1,dt*3);
     scene.environmentIntensity=1.0-0.35*inside;renderer.toneMappingExposure=1.0+0.55*inside;hemi.intensity=0.25-0.1*inside}
   composer.render()});
 </script>
