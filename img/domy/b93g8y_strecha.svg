@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1000 1000" class="roofplan" role="img" aria-label="Půdorys střechy domu b93g8y s výhledy z oken do zahrady">
+<defs></defs>
+<g class="rays" fill="#8C8C8C" fill-opacity=".14" stroke="#8C8C8C" stroke-width="1" stroke-opacity=".7" stroke-linejoin="round"></g>
+<g class="roof" fill="#fff" stroke="#111111" stroke-width="1"><path class="eave" stroke-width="1.6" d="M171.8 23.9 L607.6 23.9 L607.6 689.5 L171.8 689.5 L171.8 23.9 Z"/></g>
+<g class="contours" fill="none" stroke="#111111" stroke-width=".7" stroke-opacity=".5"><path d="M199.6 51.6 L579.9 51.6 L579.9 661.7 L199.6 661.7 L199.6 51.6 Z"/><path d="M227.3 79.4 L552.2 79.4 L552.2 634.0 L227.3 634.0 L227.3 79.4 Z"/><path d="M255.0 107.1 L524.4 107.1 L524.4 606.2 L255.0 606.2 L255.0 107.1 Z"/><path d="M282.8 134.8 L496.7 134.8 L496.7 578.5 L282.8 578.5 L282.8 134.8 Z"/><path d="M310.5 162.6 L468.9 162.6 L468.9 550.8 L310.5 550.8 L310.5 162.6 Z"/><path d="M338.3 190.3 L441.2 190.3 L441.2 523.0 L338.3 523.0 L338.3 190.3 Z"/><path d="M366.0 218.1 L413.4 218.1 L413.4 495.3 L366.0 495.3 L366.0 218.1 Z"/></g>
+</svg>
