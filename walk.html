@@ -86,7 +86,10 @@ const ray=new THREE.Raycaster();const down=new THREE.Vector3(0,-1,0);
 function snap(){ray.set(new THREE.Vector3(cam.position.x,cam.position.y-EYE+1.7,cam.position.z),down);ray.far=3;
   const h=ray.intersectObjects(solid,false)[0];if(h)cam.position.y=h.point.y+EYE}
 function blocked(dir,dist){for(const y of [0.45,1.1]){ray.set(new THREE.Vector3(cam.position.x,cam.position.y-EYE+y,cam.position.z),dir);ray.far=dist+R;
-  if(ray.intersectObjects(solid,false).length)return true}return false}
+  if(ray.intersectObjects(solid,false).length)return true}
+  // F124: no floor within half a metre below the next step (the model has no terrain) = the walk ends there
+  const q=cam.position.clone().addScaledVector(dir,dist+R);ray.set(new THREE.Vector3(q.x,cam.position.y-EYE+1.7,q.z),down);ray.far=2.2;
+  return !ray.intersectObjects(solid,false).length}
 
 const keys={};addEventListener('keydown',e=>{keys[e.code]=true});addEventListener('keyup',e=>{keys[e.code]=false});
 const cv=renderer.domElement;
