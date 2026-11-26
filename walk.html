@@ -63,7 +63,7 @@ const Q=new URLSearchParams(location.search);
 // as the renders, sun with soft shadows, ambient occlusion in corners (GTAO), AgX tone curve; on a slow machine the
 // heavy parts switch off by themselves (frame time), ?q=0 forces the light version
 const renderer=new THREE.WebGLRenderer({antialias:true,powerPreference:'high-performance'});
-renderer.setPixelRatio(Math.min(devicePixelRatio,touch?1.5:1.75));renderer.setSize(innerWidth,innerHeight);
+const PRMAX=Math.min(devicePixelRatio,1.5);let PR=Math.min(PRMAX,1.0);renderer.setPixelRatio(PR);renderer.setSize(innerWidth,innerHeight);
 renderer.toneMapping=THREE.NeutralToneMapping;renderer.toneMappingExposure=1.0;renderer.outputColorSpace=THREE.SRGBColorSpace;
 renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
 document.body.prepend(renderer.domElement);
@@ -175,7 +175,12 @@ cv.addEventListener('pointerup',end);cv.addEventListener('pointercancel',end);
 const clock=new THREE.Clock();let ft=0,fn=0,fk=0,tl=performance.now();
 renderer.setAnimationLoop(()=>{const dt=Math.min(0.05,clock.getDelta());
   // automatic quality: after the first 90 frames, a slow machine (> 45 ms a frame) drops AO and shadows
-  {const n_=performance.now();if(HQ&&fk<1&&solid.length){fn++;if(fn>20)ft+=n_-tl;if(fn===90){fk=1;if(ft/70>45&&Q.get('q')!=='1'){HQ=false;setQ()}}}tl=n_}
+  // automatic quality from the real frame time: the render resolution follows the machine (0.55 .. device pixels, aim
+  // ~16-28 ms); only when even the lowest resolution is too slow do the shadows, AO and window lights switch off
+  {const n_=performance.now();if(solid.length&&document.visibilityState==='visible'){fn++;if(fn>20){ft+=n_-tl;
+    if(fn%30===0){const a=ft/30;ft=0;let p=PR;if(a>28)p=Math.max(0.55,PR*0.82);else if(a<15)p=Math.min(PRMAX,PR*1.12);
+      if(Math.abs(p-PR)>0.02){PR=p;renderer.setPixelRatio(PR);composer.setPixelRatio(PR)}
+      else if(a>45&&PR<=0.56&&HQ&&Q.get('q')!=='1'&&!fk){fk=1;HQ=false;setQ()}}}}tl=n_}
   let f=(keys.KeyW||keys.ArrowUp?1:0)-(keys.KeyS||keys.ArrowDown?1:0)-mv.y,s=(keys.KeyD?1:0)-(keys.KeyA?1:0)+mv.x;
   if(!touch){if(keys.ArrowLeft)yaw+=1.6*dt;if(keys.ArrowRight)yaw-=1.6*dt}
   cam.rotation.set(pitch,yaw,0);
