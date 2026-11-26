@@ -48,6 +48,8 @@ import {EffectComposer} from 'three/addons/postprocessing/EffectComposer.js';
 import {RenderPass} from 'three/addons/postprocessing/RenderPass.js';
 import {GTAOPass} from 'three/addons/postprocessing/GTAOPass.js';
 import {OutputPass} from 'three/addons/postprocessing/OutputPass.js';
+import {RectAreaLightUniformsLib} from 'three/addons/lights/RectAreaLightUniformsLib.js';
+RectAreaLightUniformsLib.init();
 
 const EYE=1.6, R=0.3, SPEED=1.5;
 // F124: starts come from <model>_walk.json (_tools/walk_spots.py: solved from the walkable free space of the model,
@@ -60,7 +62,7 @@ const Q=new URLSearchParams(location.search);
 // heavy parts switch off by themselves (frame time), ?q=0 forces the light version
 const renderer=new THREE.WebGLRenderer({antialias:true,powerPreference:'high-performance'});
 renderer.setPixelRatio(Math.min(devicePixelRatio,touch?1.5:1.75));renderer.setSize(innerWidth,innerHeight);
-renderer.toneMapping=THREE.AgXToneMapping;renderer.toneMappingExposure=1.0;renderer.outputColorSpace=THREE.SRGBColorSpace;
+renderer.toneMapping=THREE.NeutralToneMapping;renderer.toneMappingExposure=1.0;renderer.outputColorSpace=THREE.SRGBColorSpace;
 renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
 document.body.prepend(renderer.domElement);
 const scene=new THREE.Scene();scene.background=new THREE.Color('#e3e3e3');
@@ -96,12 +98,16 @@ function prep(root,collide){root.traverse(o=>{if(!o.isMesh)return;
   // door leaves are open in the walk (the model has them closed), flames and haze are for renders only
   if(/flame|glow|haze|cloud/.test(n)||HIDE.some(k=>n.includes(k))){o.visible=false;return}
   const glass=/glass|glazing/.test(n);
-  if(glass){o.material.depthWrite=false;o.castShadow=false;o.receiveShadow=false}else{o.castShadow=true;o.receiveShadow=true}
+  // clear glass: the view out matters more than the milky reflection of the sky
+  if(glass){o.material=new THREE.MeshPhysicalMaterial({color:0xffffff,roughness:0.03,metalness:0,transparent:true,opacity:0.07,envMapIntensity:0.5,depthWrite:false});o.castShadow=false;o.receiveShadow=false}else{o.castShadow=true;o.receiveShadow=true}
   if(/led/.test(n)||!collide)return;
   solid.push(o)})}
 
 Promise.all([load(src),cfg,sky,load(base+'_okoli.glb').catch(()=>null)]).then(([g,c,hdr,env])=>{
   if(c&&c.spots&&c.spots.length){SPOTS=c.spots;HIDE=c.hide||HIDE}
+  // daylight through the windows: a soft area light in every opening, facing into the room (portals, as in the renders)
+  for(const [x,y,z0,z1,nx,ny,w] of ((c&&c.portals)||[]).slice(0,14)){const L=new THREE.RectAreaLight(0xeef2f7,3.2,w,z1-z0);
+    L.position.set(x,(z0+z1)/2,-y);L.lookAt(x+nx,(z0+z1)/2,-(y+ny));scene.add(L)}
   if(hdr){hdr.mapping=THREE.EquirectangularReflectionMapping;scene.background=hdr;scene.environment=hdr;
     scene.backgroundRotation.y=scene.environmentRotation.y=THREE.MathUtils.degToRad((c&&c.sky_rot)||200)}
   prep(g.scene,true);scene.add(g.scene);
