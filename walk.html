@@ -49,6 +49,7 @@ import {RenderPass} from 'three/addons/postprocessing/RenderPass.js';
 import {GTAOPass} from 'three/addons/postprocessing/GTAOPass.js';
 import {OutputPass} from 'three/addons/postprocessing/OutputPass.js';
 import {RectAreaLightUniformsLib} from 'three/addons/lights/RectAreaLightUniformsLib.js';
+import {Reflector} from 'three/addons/objects/Reflector.js';
 RectAreaLightUniformsLib.init();
 
 const EYE=1.6, R=0.3, SPEED=1.5;
@@ -93,6 +94,16 @@ const cfg=fetch(base+'_walk.json').then(r=>r.ok?r.json():null).catch(()=>null);
 const load=u=>new Promise((ok,no)=>gl.load(u,ok,undefined,no));
 const sky=new Promise(ok=>new RGBELoader(mgr).load(base+'_sky.hdr',t=>ok(t),undefined,()=>ok(null)));
 
+const MIRRORS=[];
+// a bathroom mirror (its own quad in the model) becomes a real reflection; light quality keeps the plain surface
+function mirror(o){o.updateWorldMatrix(true,false);const p=o.geometry.attributes.position,v=[];
+  for(let i=0;i<p.count;i++){const q=new THREE.Vector3().fromBufferAttribute(p,i).applyMatrix4(o.matrixWorld);if(!v.some(u=>u.distanceTo(q)<1e-3))v.push(q)}
+  if(v.length<4)return;const c=v.reduce((a,b)=>a.add(b),new THREE.Vector3()).multiplyScalar(1/v.length);
+  const ys=v.map(q=>q.y),h=Math.max(...ys)-Math.min(...ys),lo=v.filter(q=>q.y<c.y),w=lo.length>1?lo[0].distanceTo(lo[1]):0.6;
+  const nrm=new THREE.Vector3().fromBufferAttribute(o.geometry.attributes.normal,0).transformDirection(o.matrixWorld);
+  const r=new Reflector(new THREE.PlaneGeometry(w,h),{textureWidth:1024,textureHeight:Math.round(1024*h/w),color:0xc4c8c8,clipBias:0.003});
+  r.position.copy(c).addScaledVector(nrm,0.002);r.lookAt(c.clone().add(nrm));r.visible=HQ;scene.add(r);MIRRORS.push([r,o]);o.visible=!HQ;
+  o.material.envMapIntensity=0.15}
 function prep(root,collide){root.traverse(o=>{if(!o.isMesh)return;
   const n=(o.name+' '+(o.parent?o.parent.name:'')).toLowerCase();
   // door leaves are open in the walk (the model has them closed), flames and haze are for renders only
@@ -102,6 +113,7 @@ function prep(root,collide){root.traverse(o=>{if(!o.isMesh)return;
   if(glass){o.material=new THREE.MeshPhysicalMaterial({color:0xffffff,roughness:0.03,metalness:0,transparent:true,opacity:0.07,envMapIntensity:0.5,depthWrite:false});o.castShadow=false;o.receiveShadow=false}else{o.castShadow=true;o.receiveShadow=true}
   // the grass texture is the bare ground under the renders' meadow: tint it to a lawn green
   if(o.material&&o.material.name==='web_grass')o.material.color.setRGB(0.5,0.92,0.42);
+  if(/^mirror_\d/.test(o.name)||/^mirror_\d/.test(o.parent&&o.parent.name||'')){mirror(o);return}
   if(/led/.test(n)||!collide)return;
   solid.push(o)})}
 
@@ -123,7 +135,7 @@ if(Q.has('debug'))window.__walk={cam,scene,renderer,look:(y,p)=>{yaw=y;pitch=p},
 const ui=document.getElementById('ui');
 function buttons(){ui.innerHTML='';SPOTS.forEach((s,i)=>{const b=document.createElement('button');b.textContent=s[0];b.onclick=()=>go(i);ui.append(b)});
   const q=document.createElement('button');q.className='q';q.onclick=()=>{HQ=!HQ;setQ()};ui.append(q);setQ()}
-function setQ(){ao.enabled=HQ;renderer.shadowMap.enabled=HQ;sun.castShadow=HQ;scene.traverse(o=>{if(o.material)o.material.needsUpdate=true});
+function setQ(){ao.enabled=HQ;for(const [r,o] of MIRRORS){r.visible=HQ;o.visible=!HQ}renderer.shadowMap.enabled=HQ;sun.castShadow=HQ;scene.traverse(o=>{if(o.material)o.material.needsUpdate=true});
   const q=ui.querySelector('.q');if(q)q.textContent=HQ?'Vyšší kvalita: zap':'Vyšší kvalita: vyp'}
 function go(i){const [,p,t]=SPOTS[i];cam.position.set(p[0],EYE,-p[1]);yaw=Math.atan2(-(t[0]-p[0]),-(-t[1]+p[1]));pitch=-0.05;
   [...ui.children].forEach((b,k)=>b.classList.toggle('on',k===i));snap()}
@@ -167,7 +179,7 @@ renderer.setAnimationLoop(()=>{const dt=Math.min(0.05,clock.getDelta());
     if(!blocked(d,step)){cam.position.addScaledVector(d,step);snap()}
     else{for(const ax of [new THREE.Vector3(Math.sign(d.x),0,0),new THREE.Vector3(0,0,Math.sign(d.z))]){if(ax.lengthSq()&&!blocked(ax,step*Math.abs(ax.x?d.x:d.z))){cam.position.addScaledVector(ax,step*Math.abs(ax.x?d.x:d.z));snap();break}}}}
   if(solid.length){inside+=(indoor()-inside)*Math.min(1,dt*3);
-    scene.environmentIntensity=1.0-0.45*inside;renderer.toneMappingExposure=1.0+0.35*inside;hemi.intensity=0.25-0.1*inside}
+    scene.environmentIntensity=1.0-0.35*inside;renderer.toneMappingExposure=1.0+0.55*inside;hemi.intensity=0.25-0.1*inside}
   composer.render()});
 </script>
 </body>
