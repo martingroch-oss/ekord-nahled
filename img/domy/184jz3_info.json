@@ -1,0 +1,1 @@
+{"rooms": [{"name": "koupelna", "area": 6.7}, {"name": "koupelna", "area": 8.5}, {"name": "obývací pokoj s kuchyní", "area": 80.4}, {"name": "ložnice", "area": 17.3}, {"name": "koupelna", "area": 8.5}, {"name": "pokoj", "area": 16.8}, {"name": "ložnice", "area": 16.2}], "beds": 3, "baths": 4, "wcs": 3, "walls_fc": true, "wall_ratio": 0.138, "footprint_m2": 184.1}

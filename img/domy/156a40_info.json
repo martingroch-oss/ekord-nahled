@@ -1,0 +1,1 @@
+{"rooms": [{"name": "technická místnost", "area": 10.6}, {"name": "předsíň", "area": 15.1}, {"name": "pokoj", "area": 17.6}, {"name": "obývací pokoj s kuchyní", "area": 66.6}, {"name": "ložnice", "area": 20.5}], "beds": 3, "baths": 0, "wcs": 0, "walls_fc": true, "wall_ratio": 0.144, "footprint_m2": 155.4}

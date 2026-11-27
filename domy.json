@@ -23,11 +23,8 @@
   "pdf": "pdf/b58g1z.pdf",
   "reader": "b58g1zpudcolor",
   "why": [
-   "zdi 0.02 plochy",
-   "málo příček",
    "bez kuchyně",
-   "málo vybavení",
-   "příček 0.1 m na 10 m²"
+   "málo vybavení"
   ],
   "top2011": false
  },
@@ -632,7 +629,6 @@
   "reader": "easy123rezpud",
   "why": [
    "bez zdí z řešiče",
-   "málo příček",
    "bez kuchyně",
    "plocha mimo o 169 %",
    "příček 0.0 m na 10 m²"
@@ -2038,20 +2034,24 @@
    "třígenerační"
   ],
   "plan": {
-   "kind": "img",
-   "thumb": "img/domy/201a72_vykres.jpg",
-   "big": "img/domy/201a72_vykres.jpg",
-   "w": 800,
-   "h": 576
+   "kind": "svg",
+   "thumb": "img/domy/201a72_nahled.svg",
+   "big": "img/domy/201a72_pudorys.svg",
+   "roof": "img/domy/201a72_strecha.svg",
+   "rooms": [
+    {
+     "name": "obývací pokoj s kuchyní",
+     "area": 200.0
+    }
+   ],
+   "beds": 3
   },
   "photo_files": [
    "img/domy/foto/201a72_1.jpg"
   ],
   "pdf": "pdf/201a72.pdf",
   "reader": "201a72",
-  "why": [
-   "zdi 0.03 plochy"
-  ],
+  "why": [],
   "top2011": false
  },
  {
