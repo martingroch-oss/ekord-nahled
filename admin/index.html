@@ -1,0 +1,347 @@
+<!doctype html>
+<html lang="cs">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<title>Redakce EKORD</title>
+<style>
+:root{--bg:#fff;--bg-2:#F3F3F1;--ink:#111;--ink-2:#4A4A4A;--mute:#737373;--line:#E2E2DF;--ok:#1F6B3A;--err:#A3261B;
+  --sans:"Inter Variable",Inter,"Helvetica Neue",Helvetica,Arial,sans-serif}
+*{box-sizing:border-box;margin:0;padding:0}
+body{font:400 16px/1.5 var(--sans);color:var(--ink);background:var(--bg);-webkit-font-smoothing:antialiased}
+button,input,textarea,select{font:inherit;color:inherit}
+.wrap{max-width:1100px;margin:0 auto;padding:0 20px}
+header{border-bottom:1px solid var(--line);position:sticky;top:0;background:rgba(255,255,255,.95);z-index:5}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;gap:16px}
+header b{letter-spacing:.12em;font-weight:500}
+nav{display:flex;gap:6px;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:8px;min-height:42px;padding:0 18px;border:0;background:var(--ink);color:#fff;cursor:pointer;text-decoration:none}
+.btn:hover{background:#333}.btn:disabled{opacity:.5;cursor:default}
+.btn.ghost{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1px var(--line)}.btn.ghost:hover{background:var(--bg-2)}
+.btn.ghost.on{box-shadow:inset 0 0 0 1.5px var(--ink)}
+.btn.small{min-height:32px;padding:0 10px;font-size:14px}
+h1{font-weight:300;font-size:34px;letter-spacing:-.03em;margin:36px 0 8px}
+h2{font-weight:400;font-size:21px;margin:32px 0 12px;letter-spacing:-.01em}
+.mute{color:var(--mute);font-size:14px}
+label{display:block;margin-top:18px;font-size:14px;color:var(--ink-2)}
+input[type=text],input[type=number],input[type=password],input[type=search],textarea{display:block;width:100%;margin-top:6px;padding:10px 12px;border:1px solid var(--line);background:#fff;border-radius:0}
+input:focus,textarea:focus{outline:1.5px solid var(--ink);outline-offset:-1px}
+textarea{min-height:90px;resize:vertical}
+.login{max-width:380px;margin:12vh auto 0}
+.list{list-style:none;border-top:1px solid var(--line);margin-top:16px}
+.list li{display:flex;justify-content:space-between;align-items:center;gap:12px;padding:12px 4px;border-bottom:1px solid var(--line);cursor:pointer}
+.list li:hover{background:var(--bg-2)}
+.list small{color:var(--mute)}
+.tag{font-size:12px;padding:2px 8px;background:var(--bg-2);color:var(--ink-2)}
+.row{display:flex;flex-wrap:wrap;gap:10px;align-items:center;margin-top:20px}
+.grid2{display:grid;grid-template-columns:1fr 1fr;gap:0 24px}
+.series{display:flex;flex-wrap:wrap;gap:6px 18px;margin-top:8px}
+.series label{margin:0;display:flex;gap:6px;align-items:center;color:var(--ink)}
+.photos{display:grid;grid-template-columns:repeat(auto-fill,minmax(180px,1fr));gap:12px;margin-top:10px}
+.photos figure{border:1px solid var(--line);background:var(--bg-2)}
+.photos img{width:100%;aspect-ratio:4/3;object-fit:cover;display:block}
+.photos .act{display:flex;justify-content:space-between;padding:6px}
+.photos .new{outline:2px solid var(--ok);outline-offset:-2px}
+.field{border-top:1px solid var(--line);padding:14px 0}
+.field .k{font-size:12px;color:var(--mute);display:flex;justify-content:space-between;gap:12px}
+.field.changed .k::before{content:"upraveno";color:var(--ok);font-weight:500}
+.bar{position:sticky;bottom:0;background:rgba(255,255,255,.97);border-top:1px solid var(--line);padding:12px 0;margin-top:32px}
+.bar .wrap{display:flex;gap:12px;align-items:center;flex-wrap:wrap;padding:0}
+.msg{font-size:15px}.msg.ok{color:var(--ok)}.msg.err{color:var(--err)}
+.hidden{display:none!important}
+@media (max-width:700px){.grid2{grid-template-columns:1fr}h1{font-size:28px}header .wrap{height:auto;padding-block:10px;flex-wrap:wrap}}
+</style>
+</head>
+<body>
+<header><div class="wrap"><b>EKORD · redakce</b><nav id="nav" class="hidden">
+  <button class="btn ghost small" data-tab="domy">Domy</button>
+  <button class="btn ghost small" data-tab="uvod">Úvodní stránka</button>
+  <a class="btn ghost small" href="../index.html" target="_blank" rel="noopener">Web</a>
+  <button class="btn ghost small" id="logout">Odhlásit</button></nav></div></header>
+
+<main class="wrap">
+<section id="v-login" class="login">
+  <h1>Přihlášení</h1>
+  <p class="mute">Redakce webu EKORD: texty, domy a fotky.</p>
+  <form id="f-login">
+    <label>Jméno<input type="text" id="l-user" autocomplete="username" required></label>
+    <label>Heslo<input type="password" id="l-pass" autocomplete="current-password" required></label>
+    <div class="row"><button class="btn" type="submit">Přihlásit</button><span class="msg" id="l-msg"></span></div>
+  </form>
+</section>
+
+<section id="v-domy" class="hidden">
+  <h1>Domy</h1>
+  <p class="mute">Klikněte na dům, upravte ho a uložte. Web se sám přegeneruje asi do dvou minut.</p>
+  <div class="row"><input type="search" id="q" placeholder="Hledat dům…" style="max-width:320px;margin:0"><button class="btn" id="add">Přidat dům</button></div>
+  <ul class="list" id="list"></ul>
+</section>
+
+<section id="v-dum" class="hidden">
+  <p class="row" style="margin-top:24px"><button class="btn ghost small" id="back">← Zpět na seznam</button></p>
+  <h1 id="d-h">Dům</h1>
+  <p class="mute" id="d-slug"></p>
+  <div class="grid2">
+    <label>Název<input type="text" id="d-title" required></label>
+    <label>Plocha (m²)<input type="number" id="d-m2" min="10" max="2000" step="1" required></label>
+  </div>
+  <label>Krátký popis (pod nadpisem)<input type="text" id="d-desc"></label>
+  <label>Pro koho (např. „až pro 4 osoby“)<input type="text" id="d-persons"></label>
+  <label>Řady<div class="series" id="d-series"></div></label>
+  <label>Delší popis domu (odstavce oddělte prázdným řádkem)<textarea id="d-text" rows="6"></textarea></label>
+  <label style="display:flex;gap:8px;align-items:center"><input type="checkbox" id="d-hidden"> Skrýt dům na webu</label>
+  <h2>Fotky</h2>
+  <p class="mute">První fotka je v katalogu u domů bez půdorysu. Pořadí měňte šipkami. Velké fotky se samy zmenší.</p>
+  <div class="photos" id="d-photos"></div>
+  <div class="row"><label class="btn ghost" style="margin:0;color:var(--ink)">Přidat fotky<input type="file" id="d-add" accept="image/*" multiple class="hidden"></label></div>
+  <h2>Výkres (PDF)</h2>
+  <p class="mute" id="d-pdfinfo"></p>
+  <div class="row"><label class="btn ghost" style="margin:0;color:var(--ink)">Nahrát PDF<input type="file" id="d-pdf" accept="application/pdf" class="hidden"></label><span class="mute" id="d-pdfnew"></span></div>
+</section>
+
+<section id="v-uvod" class="hidden">
+  <h1>Úvodní stránka</h1>
+  <p class="mute">Texty nadpisů a odstavců. Prázdné pole nebo „Vrátit původní“ ponechá původní text.</p>
+  <div id="u-fields"></div>
+</section>
+</main>
+
+<div class="bar hidden" id="bar"><div class="wrap wrap2" style="max-width:1100px;margin:0 auto;padding:0 20px">
+  <button class="btn" id="save">Uložit</button><span class="msg" id="msg"></span></div></div>
+
+<script>
+"use strict";
+const qs = new URLSearchParams(location.search);
+let API = qs.get("api") || "";
+const $ = (id) => document.getElementById(id);
+const show = (id) => ["v-login", "v-domy", "v-dum", "v-uvod"].forEach((v) => $(v).classList.toggle("hidden", v !== id));
+const st = { token: null, domy: null, domySha: null, rady: [], pole: [], uvod: {}, uvodSha: null, cur: null, view: null, dirty: false };
+const ses = { get: (k) => { try { return sessionStorage.getItem(k); } catch (e) { return null; } },
+              set: (k, v) => { try { v == null ? sessionStorage.removeItem(k) : sessionStorage.setItem(k, v); } catch (e) {} } };
+
+function msg(t, kind) { const m = $("msg"); m.textContent = t || ""; m.className = "msg " + (kind || ""); }
+
+async function api(path, opt = {}) {
+  const r = await fetch(API.replace(/\/$/, "") + path, { ...opt, headers: { "Content-Type": "application/json",
+    ...(st.token ? { Authorization: "Bearer " + st.token } : {}) } });
+  const j = await r.json().catch(() => ({ error: "Server neodpověděl." }));
+  if (r.status === 401 && path !== "/login") { logout(); throw new Error(j.error || "Přihlaste se znovu."); }
+  if (!r.ok) throw new Error(j.error || "Chyba " + r.status);
+  return j;
+}
+
+function slugify(t) {
+  return t.normalize("NFKD").replace(/[̀-ͯ]/g, "").toLowerCase().replace(/^ekord\s+/, "").replace(/\s+/g, "").replace(/[^a-z0-9-]+/g, "") || "dum";
+}
+
+// ---- přihlášení
+$("f-login").onsubmit = async (e) => {
+  e.preventDefault(); $("l-msg").textContent = "Přihlašuji…"; $("l-msg").className = "msg";
+  try {
+    const j = await api("/login", { method: "POST", body: JSON.stringify({ user: $("l-user").value.trim(), pass: $("l-pass").value }) });
+    st.token = j.token; ses.set("t", j.token); $("l-pass").value = ""; await start();
+  } catch (err) { $("l-msg").textContent = err.message; $("l-msg").className = "msg err"; }
+};
+function logout() { st.token = null; ses.set("t", null); $("nav").classList.add("hidden"); $("bar").classList.add("hidden"); show("v-login"); }
+$("logout").onclick = () => { if (!st.dirty || confirm("Máte neuložené změny. Opravdu odhlásit?")) logout(); };
+
+async function load() {
+  const [d, r, p, u] = await Promise.all(["content/domy.json", "content/rady.json", "content/uvod_pole.json", "content/uvod.json"]
+    .map((f) => api("/file?path=" + f).catch(() => null)));
+  if (!d) throw new Error("Nepodařilo se načíst seznam domů.");
+  st.domy = JSON.parse(d.text); st.domySha = d.sha;
+  st.rady = r ? JSON.parse(r.text) : []; st.pole = p ? JSON.parse(p.text) : [];
+  st.uvod = u ? JSON.parse(u.text) : {}; st.uvodSha = u ? u.sha : null;
+}
+
+async function start() {
+  await load();
+  $("nav").classList.remove("hidden");
+  openTab("domy");
+}
+
+document.querySelectorAll("[data-tab]").forEach((b) => b.onclick = () => {
+  if (st.dirty && !confirm("Máte neuložené změny. Zahodit je?")) return;
+  openTab(b.dataset.tab);
+});
+function openTab(t) {
+  st.dirty = false; msg("");
+  document.querySelectorAll("[data-tab]").forEach((b) => b.classList.toggle("on", b.dataset.tab === t));
+  if (t === "domy") { st.view = "domy"; renderList(); show("v-domy"); $("bar").classList.add("hidden"); }
+  if (t === "uvod") { st.view = "uvod"; renderUvod(); show("v-uvod"); $("bar").classList.remove("hidden"); }
+  scrollTo(0, 0);
+}
+
+// ---- seznam domů
+function renderList() {
+  const q = $("q").value.trim().toLowerCase();
+  const ul = $("list"); ul.innerHTML = "";
+  for (const h of st.domy) {
+    if (q && !(h.title + " " + h.slug + " " + (h.desc || "")).toLowerCase().includes(q)) continue;
+    const li = document.createElement("li");
+    const names = (h.series || []).map((s) => (st.rady.find((r) => r.slug === s) || { name: s }).name).join(", ");
+    li.innerHTML = "<div><b></b><br><small></small></div><div></div>";
+    li.querySelector("b").textContent = h.title;
+    li.querySelector("small").textContent = h.m2 + " m² · " + names + ((h.photo_files || []).length ? " · fotek " + h.photo_files.length : "");
+    if (h.hidden) li.lastChild.innerHTML = '<span class="tag">skrytý</span>';
+    li.onclick = () => openHouse(h.slug);
+    ul.appendChild(li);
+  }
+}
+$("q").oninput = renderList;
+$("add").onclick = () => openHouse(null);
+$("back").onclick = () => { if (!st.dirty || confirm("Máte neuložené změny. Zahodit je?")) openTab("domy"); };
+
+// ---- editor domu
+function openHouse(slug) {
+  const h = slug ? st.domy.find((x) => x.slug === slug) : { slug: null, title: "", desc: "", m2: "", persons: "", series: [], text: "", photo_files: [], plan: null, pdf: null, notes: [] };
+  st.cur = { h, photos: (h.photo_files || []).map((f) => ({ path: f })), removed: [], pdf: null };
+  st.view = "dum"; st.dirty = false; msg("");
+  $("d-h").textContent = slug ? "Dům " + h.title : "Nový dům";
+  $("d-slug").textContent = slug ? "Adresa stránky: dum/" + slug + ".html" : "Adresa stránky vznikne z názvu.";
+  $("d-title").value = h.title || ""; $("d-m2").value = h.m2 || ""; $("d-desc").value = h.desc || "";
+  $("d-persons").value = h.persons || ""; $("d-text").value = h.text || ""; $("d-hidden").checked = !!h.hidden;
+  const box = $("d-series"); box.innerHTML = "";
+  for (const r of st.rady) {
+    const l = document.createElement("label"); const c = document.createElement("input");
+    c.type = "checkbox"; c.value = r.slug; c.checked = (h.series || []).includes(r.slug);
+    l.appendChild(c); l.appendChild(document.createTextNode(r.name)); box.appendChild(l);
+  }
+  $("d-pdfinfo").textContent = h.pdf ? "Současný výkres: " + h.pdf + ". Nahráním ho nahradíte." : "Dům zatím nemá výkres.";
+  $("d-pdfnew").textContent = "";
+  renderPhotos(); show("v-dum"); $("bar").classList.remove("hidden"); scrollTo(0, 0);
+}
+document.querySelectorAll("#v-dum input, #v-dum textarea").forEach((el) => el.addEventListener("input", () => { st.dirty = true; }));
+$("d-series").addEventListener("change", () => { st.dirty = true; });
+
+function renderPhotos() {
+  const g = $("d-photos"); g.innerHTML = "";
+  st.cur.photos.forEach((p, i) => {
+    const f = document.createElement("figure"); if (p.b64) f.className = "new";
+    const im = document.createElement("img"); im.alt = "Fotka " + (i + 1); im.loading = "lazy";
+    im.src = p.b64 ? "data:image/jpeg;base64," + p.b64 : "../" + p.path;
+    const a = document.createElement("div"); a.className = "act";
+    const mk = (t, fn, dis) => { const b = document.createElement("button"); b.className = "btn ghost small"; b.type = "button"; b.textContent = t; b.disabled = dis; b.onclick = fn; return b; };
+    a.appendChild(mk("←", () => move(i, -1), i === 0));
+    a.appendChild(mk("Smazat", () => { const [r] = st.cur.photos.splice(i, 1); if (!r.b64) st.cur.removed.push(r.path); st.dirty = true; renderPhotos(); }));
+    a.appendChild(mk("→", () => move(i, 1), i === st.cur.photos.length - 1));
+    f.appendChild(im); f.appendChild(a); g.appendChild(f);
+  });
+}
+function move(i, d) { const p = st.cur.photos; [p[i], p[i + d]] = [p[i + d], p[i]]; st.dirty = true; renderPhotos(); }
+
+async function shrink(file, max = 1600) {
+  const bmp = await createImageBitmap(file, { imageOrientation: "from-image" });
+  const k = Math.min(1, max / Math.max(bmp.width, bmp.height));
+  const c = document.createElement("canvas"); c.width = Math.round(bmp.width * k); c.height = Math.round(bmp.height * k);
+  c.getContext("2d").drawImage(bmp, 0, 0, c.width, c.height);
+  const blob = await new Promise((r) => c.toBlob(r, "image/jpeg", 0.85));
+  return b64(await blob.arrayBuffer());
+}
+function b64(buf) { let s = ""; const a = new Uint8Array(buf); for (let i = 0; i < a.length; i += 0x8000) s += String.fromCharCode.apply(null, a.subarray(i, i + 0x8000)); return btoa(s); }
+
+$("d-add").onchange = async (e) => {
+  msg("Připravuji fotky…");
+  for (const f of e.target.files) {
+    try { st.cur.photos.push({ b64: await shrink(f) }); } catch (err) { msg("Fotku " + f.name + " nelze přečíst.", "err"); }
+  }
+  e.target.value = ""; st.dirty = true; renderPhotos(); if (!$("msg").classList.contains("err")) msg("");
+};
+$("d-pdf").onchange = async (e) => {
+  const f = e.target.files[0]; if (!f) return;
+  if (f.size > 8e6) { msg("PDF je větší než 8 MB.", "err"); return; }
+  st.cur.pdf = b64(await f.arrayBuffer()); $("d-pdfnew").textContent = "Nový výkres: " + f.name; st.dirty = true;
+};
+
+async function saveHouse() {
+  const c = st.cur, h = c.h, isNew = !h.slug;
+  const title = $("d-title").value.trim(), m2 = parseInt($("d-m2").value, 10);
+  if (!title) throw new Error("Vyplňte název.");
+  if (!(m2 >= 10)) throw new Error("Vyplňte plochu v m².");
+  const series = [...$("d-series").querySelectorAll("input:checked")].map((x) => x.value);
+  if (!series.length) throw new Error("Vyberte aspoň jednu řadu.");
+  let slug = h.slug;
+  if (isNew) { slug = slugify(title); let s = slug, n = 2; while (st.domy.some((x) => x.slug === s)) s = slug + "-" + n++; slug = s; }
+  const files = [], stamp = Date.now().toString(36);
+  const photo_files = c.photos.map((p, i) => {
+    if (!p.b64) return p.path;
+    const path = "img/domy/foto/" + slug + "_" + stamp + (i + 1) + ".jpg";
+    files.push({ path, b64: p.b64 }); return path;
+  });
+  for (const r of c.removed) if (/^img\/domy\/foto\//.test(r)) files.push({ path: r, delete: true });
+  const upd = { ...h, slug, title, m2, desc: $("d-desc").value.trim() || "Dům EKORD " + title, persons: $("d-persons").value.trim() || null,
+                series, text: $("d-text").value.trim(), hidden: $("d-hidden").checked || undefined, photo_files };
+  if (c.pdf) { upd.pdf = "pdf/" + slug + ".pdf"; files.push({ path: upd.pdf, b64: c.pdf }); }
+  const domy = isNew ? [...st.domy, upd] : st.domy.map((x) => (x.slug === h.slug ? upd : x));
+  domy.sort((a, b) => a.m2 - b.m2 || a.slug.localeCompare(b.slug));
+  files.unshift({ path: "content/domy.json", text: JSON.stringify(domy, null, 1) + "\n", base_sha: st.domySha });
+  await api("/commit", { method: "POST", body: JSON.stringify({ message: (isNew ? "Nový dům " : "Úprava domu ") + title, files }) });
+  await load(); st.dirty = false;
+  openHouse(slug);
+}
+
+// ---- úvodní stránka
+function renderUvod() {
+  const box = $("u-fields"); box.innerHTML = ""; let last = null;
+  for (const f of st.pole) {
+    if (f.section !== last) { const h = document.createElement("h2"); h.textContent = f.section; box.appendChild(h); last = f.section; }
+    const d = document.createElement("div"); d.className = "field";
+    const k = document.createElement("div"); k.className = "k";
+    const lab = document.createElement("span"); lab.textContent = f.tag.startsWith("h") ? "Nadpis" : "Odstavec";
+    const rb = document.createElement("button"); rb.className = "btn ghost small"; rb.type = "button"; rb.textContent = "Vrátit původní";
+    k.appendChild(lab); k.appendChild(rb);
+    const ta = document.createElement(f.tag.startsWith("h") || f.default.length < 70 ? "input" : "textarea");
+    if (ta.tagName === "INPUT") ta.type = "text"; else ta.rows = Math.min(8, Math.ceil(f.default.length / 90) + 1);
+    ta.value = st.uvod[f.key] != null ? st.uvod[f.key] : f.default; ta.dataset.key = f.key; ta.dataset.def = f.default;
+    ta.setAttribute("aria-label", f.section + ": " + f.default.slice(0, 40));
+    const mark = () => d.classList.toggle("changed", ta.value.trim() !== f.default);
+    ta.oninput = () => { st.dirty = true; mark(); };
+    rb.onclick = () => { ta.value = f.default; st.dirty = true; mark(); };
+    mark(); d.appendChild(k); d.appendChild(ta); box.appendChild(d);
+  }
+  if (!st.pole.length) box.textContent = "Seznam textů zatím není. Vznikne při prvním sestavení webu.";
+}
+async function saveUvod() {
+  const out = {};
+  document.querySelectorAll("#u-fields [data-key]").forEach((t) => { const v = t.value.trim(); if (v && v !== t.dataset.def) out[t.dataset.key] = v; });
+  const f = { path: "content/uvod.json", text: JSON.stringify(out, null, 1) + "\n" };
+  if (st.uvodSha) f.base_sha = st.uvodSha;
+  await api("/commit", { method: "POST", body: JSON.stringify({ message: "Úprava textů úvodní stránky", files: [f] }) });
+  await load(); st.dirty = false; renderUvod();
+}
+
+// ---- uložení a stav sestavení
+let poll = null;
+$("save").onclick = async () => {
+  $("save").disabled = true; msg("Ukládám…");
+  try {
+    if (st.view === "dum") await saveHouse(); else await saveUvod();
+    msg("Uloženo. Web se přegeneruje asi do dvou minut.", "ok"); watch();
+  } catch (e) { msg(e.message, "err"); }
+  $("save").disabled = false;
+};
+function watch() {
+  clearInterval(poll); let n = 0;
+  poll = setInterval(async () => {
+    if (++n > 30) return clearInterval(poll);
+    try {
+      const s = await api("/status");
+      if (s.status === "completed") { clearInterval(poll); msg(s.conclusion === "success" ? "Uloženo a web je aktualizovaný (může trvat ještě minutu, než se zobrazí)." : "Uloženo, ale sestavení webu selhalo. Dejte vědět Martinovi.", s.conclusion === "success" ? "ok" : "err"); }
+      else if (s.status) msg("Uloženo. Web se právě sestavuje…", "ok");
+    } catch (e) { clearInterval(poll); }
+  }, 10000);
+}
+addEventListener("beforeunload", (e) => { if (st.dirty) { e.preventDefault(); e.returnValue = ""; } });
+
+// ---- start
+(async () => {
+  if (!API) { try { API = (await (await fetch("config.json", { cache: "no-store" })).json()).api || ""; } catch (e) {} }
+  if (!API) { show("v-login"); $("l-msg").textContent = "Redakce zatím není připojená k serveru (admin/config.json)."; $("l-msg").className = "msg err"; return; }
+  st.token = ses.get("t");
+  if (st.token) { try { await start(); return; } catch (e) { st.token = null; } }
+  show("v-login");
+})();
+</script>
+</body>
+</html>

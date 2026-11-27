@@ -1,0 +1,39 @@
+name: Sestavení webu
+# Po úpravě v redakčním systému (content/*.json, fotky) přegeneruje úvodní stránku, katalog a stránky domů
+# a požádá GitHub Pages o nové zveřejnění.
+on:
+  push:
+    branches: [main]
+    paths: ["content/**", "site/**", "img/domy/foto/**", "pdf/**"]
+  workflow_dispatch:
+permissions:
+  contents: write
+  pages: write
+concurrency:
+  group: sestaveni
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Sestavit stránky
+        env:
+          CAT_H: ${{ github.workspace }}
+          CAT_JSON: ${{ github.workspace }}/content/domy.json
+        run: python site/tools/build.py site/src.html index.html
+      - name: Uložit výsledek
+        run: |
+          git config user.name "ekord-redakce"
+          git config user.email "ekord-redakce@users.noreply.github.com"
+          git add -A index.html domy.html dum content/uvod_pole.json
+          if git diff --cached --quiet; then echo "beze změny"; exit 0; fi
+          git commit -m "Sestavení webu po úpravě obsahu"
+          git push
+      - name: Zveřejnit
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh api -X POST repos/${{ github.repository }}/pages/builds || true

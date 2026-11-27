@@ -1,0 +1,13 @@
+name = "ekord-redakce"
+main = "worker.js"
+compatibility_date = "2026-11-01"
+
+[vars]
+GH_REPO = "martingroch-oss/ekord-nahled"
+GH_BRANCH = "main"
+ALLOW_ORIGIN = "https://martingroch-oss.github.io"
+
+# Tajné hodnoty se nastaví příkazy (nikdy je nezapisujte sem):
+#   npx wrangler secret put GH_TOKEN
+#   npx wrangler secret put USERS            # např. tata:dlouhe-heslo
+#   npx wrangler secret put SESSION_SECRET

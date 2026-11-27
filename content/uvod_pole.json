@@ -1,0 +1,320 @@
+[
+ {
+  "key": "Úvod.p1",
+  "section": "Úvod",
+  "tag": "p",
+  "default": "EKORD · Ing. Marian Groch"
+ },
+ {
+  "key": "Úvod.p2",
+  "section": "Úvod",
+  "tag": "p",
+  "default": "Bungalov 182j47 ze zahrady. Vizualizace z projektové dokumentace."
+ },
+ {
+  "key": "Jak navrhujeme.p1",
+  "section": "Jak navrhujeme",
+  "tag": "p",
+  "default": "Dům začíná pozemkem: odkud svítí slunce, kam je vidět a kde je klid. Teprve potom kreslíme pokoje."
+ },
+ {
+  "key": "Jak navrhujeme.p2",
+  "section": "Jak navrhujeme",
+  "tag": "p",
+  "default": "Přízemní domy, které se dobře užívají i za třicet let"
+ },
+ {
+  "key": "den.p1",
+  "section": "Den v domě",
+  "tag": "p",
+  "default": "Dopoledne"
+ },
+ {
+  "key": "den.h21",
+  "section": "Den v domě",
+  "tag": "h2",
+  "default": "Kuchyně, která se dívá do zahrady"
+ },
+ {
+  "key": "den.p2",
+  "section": "Den v domě",
+  "tag": "p",
+  "default": "Kdo vaří, stojí čelem do pokoje, ne ke zdi. Slunce sem padá okny od terasy a posouvá se po podlaze, jak jde den."
+ },
+ {
+  "key": "den.p3",
+  "section": "Den v domě",
+  "tag": "p",
+  "default": "Odpoledne"
+ },
+ {
+  "key": "den.h22",
+  "section": "Den v domě",
+  "tag": "h2",
+  "default": "Knihovna a místo na čtení"
+ },
+ {
+  "key": "den.p4",
+  "section": "Den v domě",
+  "tag": "p",
+  "default": "Police od podlahy ke stropu jsou vestavěné. Pohovka stojí tak, aby z ní bylo vidět ven a nikdo neseděl zády k oknu."
+ },
+ {
+  "key": "den.p5",
+  "section": "Den v domě",
+  "tag": "p",
+  "default": "Venku"
+ },
+ {
+  "key": "den.h23",
+  "section": "Den v domě",
+  "tag": "h2",
+  "default": "Terasa v závětří"
+ },
+ {
+  "key": "den.p6",
+  "section": "Den v domě",
+  "tag": "p",
+  "default": "Leží mezi křídly domu, chráněná před větrem i pohledy od sousedů. Z obývacího pokoje se na ni vychází bez schodu."
+ },
+ {
+  "key": "den.p7",
+  "section": "Den v domě",
+  "tag": "p",
+  "default": "Večer"
+ },
+ {
+  "key": "den.h24",
+  "section": "Den v domě",
+  "tag": "h2",
+  "default": "Návrat domů"
+ },
+ {
+  "key": "den.p8",
+  "section": "Den v domě",
+  "tag": "p",
+  "default": "Vstup je z ulice, obytné pokoje na druhé straně, u zahrady. Celý dům je na jednom podlaží, bez jediného schodu."
+ },
+ {
+  "key": "vyhledy.p1",
+  "section": "Výhledy",
+  "tag": "p",
+  "default": "Půdorys"
+ },
+ {
+  "key": "vyhledy.h21",
+  "section": "Výhledy",
+  "tag": "h2",
+  "default": "Kam je odkud vidět"
+ },
+ {
+  "key": "vyhledy.p2",
+  "section": "Výhledy",
+  "tag": "p",
+  "default": "Výhledy kreslíme z míst, kde lidé v domě opravdu tráví čas: od stolu, z gauče a křesel, z postele, od linky. Vyberte místo, nebo klepněte na tečku."
+ },
+ {
+  "key": "slunce.p1",
+  "section": "Slunce a přesah střechy",
+  "tag": "p",
+  "default": "Řez oknem do zahrady"
+ },
+ {
+  "key": "slunce.h21",
+  "section": "Slunce a přesah střechy",
+  "tag": "h2",
+  "default": "V zimě slunce dovnitř, v létě ne"
+ },
+ {
+  "key": "slunce.h31",
+  "section": "Slunce a přesah střechy",
+  "tag": "h3",
+  "default": "Málo ploch, které chladnou"
+ },
+ {
+  "key": "slunce.p2",
+  "section": "Slunce a přesah střechy",
+  "tag": "p",
+  "default": "Kompaktní tvar a valbová střecha bez složitých detailů. Dům se levně vytápí a snadno udržuje."
+ },
+ {
+  "key": "slunce.h32",
+  "section": "Slunce a přesah střechy",
+  "tag": "h3",
+  "default": "Jedno podlaží"
+ },
+ {
+  "key": "slunce.p3",
+  "section": "Slunce a přesah střechy",
+  "tag": "p",
+  "default": "Bez schodů a bez chodeb navíc. Dům vyhovuje rodině s dětmi i lidem v penzi, a proto si drží hodnotu."
+ },
+ {
+  "key": "slunce.h33",
+  "section": "Slunce a přesah střechy",
+  "tag": "h3",
+  "default": "Ověřená konstrukce"
+ },
+ {
+  "key": "slunce.p4",
+  "section": "Slunce a přesah střechy",
+  "tag": "p",
+  "default": "Konstrukční systém EKORD a patentovaná valbová střecha. Podle nich stojí stovky domů na klíč i svépomocí."
+ },
+ {
+  "key": "prohlidka.p1",
+  "section": "Prohlídka domu",
+  "tag": "p",
+  "default": "Prohlídka"
+ },
+ {
+  "key": "prohlidka.h21",
+  "section": "Prohlídka domu",
+  "tag": "h2",
+  "default": "Projděte si dům"
+ },
+ {
+  "key": "prohlidka.h31",
+  "section": "Prohlídka domu",
+  "tag": "h3",
+  "default": "Vejděte dovnitř"
+ },
+ {
+  "key": "prohlidka.p2",
+  "section": "Prohlídka domu",
+  "tag": "p",
+  "default": "Choďte domem jako na prohlídce. Na počítači klávesy W A S D a myš, na telefonu prst."
+ },
+ {
+  "key": "prohlidka.h32",
+  "section": "Prohlídka domu",
+  "tag": "h3",
+  "default": "Dům jako model"
+ },
+ {
+  "key": "prohlidka.p3",
+  "section": "Prohlídka domu",
+  "tag": "p",
+  "default": "Otáčejte, přibližujte, sundejte střechu."
+ },
+ {
+  "key": "prohlidka.h33",
+  "section": "Prohlídka domu",
+  "tag": "h3",
+  "default": "Rozhlédněte se"
+ },
+ {
+  "key": "prohlidka.p4",
+  "section": "Prohlídka domu",
+  "tag": "p",
+  "default": "Snímky 360° z obývacího pokoje, ložnice a terasy."
+ },
+ {
+  "key": "postaveno.p1",
+  "section": "Postavené domy",
+  "tag": "p",
+  "default": "Realizace"
+ },
+ {
+  "key": "postaveno.h21",
+  "section": "Postavené domy",
+  "tag": "h2",
+  "default": "Tak to vypadá postavené"
+ },
+ {
+  "key": "postaveno.h31",
+  "section": "Postavené domy",
+  "tag": "h3",
+  "default": "Další domy EKORD"
+ },
+ {
+  "key": "postup.p1",
+  "section": "Jak pracujeme",
+  "tag": "p",
+  "default": "Postup"
+ },
+ {
+  "key": "postup.h21",
+  "section": "Jak pracujeme",
+  "tag": "h2",
+  "default": "Od první zprávy ke stavebnímu povolení"
+ },
+ {
+  "key": "postup.h31",
+  "section": "Jak pracujeme",
+  "tag": "h3",
+  "default": "Zpráva"
+ },
+ {
+  "key": "postup.p2",
+  "section": "Jak pracujeme",
+  "tag": "p",
+  "default": "Napíšete pár vět o pozemku a o tom, kdo bude v domě bydlet."
+ },
+ {
+  "key": "postup.h32",
+  "section": "Jak pracujeme",
+  "tag": "h3",
+  "default": "Konzultace"
+ },
+ {
+  "key": "postup.p3",
+  "section": "Jak pracujeme",
+  "tag": "p",
+  "default": "Projdeme pozemek: slunce, výhledy, příjezd a sousedy."
+ },
+ {
+  "key": "postup.h33",
+  "section": "Jak pracujeme",
+  "tag": "h3",
+  "default": "Dům na míru"
+ },
+ {
+  "key": "postup.p4",
+  "section": "Jak pracujeme",
+  "tag": "p",
+  "default": "Půdorys, střecha, pohledy a vizualizace. V ceně jsou až tři varianty."
+ },
+ {
+  "key": "postup.h34",
+  "section": "Jak pracujeme",
+  "tag": "h3",
+  "default": "Povolení"
+ },
+ {
+  "key": "postup.p5",
+  "section": "Jak pracujeme",
+  "tag": "p",
+  "default": "Statiku, instalace, tepelnou techniku a požární řešení zpracuje autorizovaný projektant."
+ },
+ {
+  "key": "autor.p1",
+  "section": "O autorovi",
+  "tag": "p",
+  "default": "Navrhuji přízemní rodinné domy a vyvinul jsem pro ně vlastní konstrukční systém a patentovanou konstrukci valbové střechy. Jsem stavební inženýr, takže každý návrh rovnou počítá s tím, jak se dům postaví."
+ },
+ {
+  "key": "kontakt.h21",
+  "section": "Kontakt",
+  "tag": "h2",
+  "default": "Napište mi o svém pozemku"
+ },
+ {
+  "key": "kontakt.p1",
+  "section": "Kontakt",
+  "tag": "p",
+  "default": "Pár vět stačí: kde pozemek je, kdo bude v domě bydlet a co se vám na místě líbí. Ozvu se s termínem konzultace."
+ },
+ {
+  "key": "kontakt.p2",
+  "section": "Kontakt",
+  "tag": "p",
+  "default": "Cena se počítá ze zastavěné plochy: architektonické řešení 500 Kč/m², zbytek dokumentace ke stavebnímu povolení u projektanta orientačně 420 Kč/m²."
+ },
+ {
+  "key": "kontakt.p3",
+  "section": "Kontakt",
+  "tag": "p",
+  "default": "Odesláním se otevře váš e-mail s vyplněnou zprávou. Situaci pozemku do něj můžete přiložit."
+ }
+]
